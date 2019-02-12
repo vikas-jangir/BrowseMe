@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Browse Me View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="BrowseMeViewController" customModule="BrowseMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar multipleTouchEnabled="YES" contentMode="redraw" barStyle="black" searchBarStyle="minimal" text="" translatesAutoresizingMaskIntoConstraints="NO" id="HDP-NK-yEK">
+                                <rect key="frame" x="0.0" y="84" width="414" height="56"/>
+                                <color key="backgroundColor" red="0.95523184537887573" green="0.31901572929608474" blue="0.45681856487216188" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="ldb-OR-TUt"/>
+                                </constraints>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <offsetWrapper key="searchTextPositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                                <offsetWrapper key="searchFieldBackgroundPositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="webSearch" returnKeyType="go" smartDashesType="yes" smartInsertDeleteType="yes" textContentType="url"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="2xk-vC-M96"/>
+                                </connections>
+                            </searchBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Pv-8L-GAz">
+                                <rect key="frame" x="0.0" y="785" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <items>
+                                    <barButtonItem systemItem="rewind" id="OXp-ka-13a">
+                                        <connections>
+                                            <action selector="back:" destination="BYZ-38-t0r" id="rcN-di-aL6"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="bEr-uX-NNN"/>
+                                    <barButtonItem title="Item" systemItem="refresh" id="Arw-p2-b3K">
+                                        <connections>
+                                            <action selector="refresh:" destination="BYZ-38-t0r" id="2ia-bW-w9B"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="B8T-1q-Zji"/>
+                                    <barButtonItem systemItem="fastForward" id="udE-cE-Ca6">
+                                        <connections>
+                                            <action selector="next:" destination="BYZ-38-t0r" id="l7C-v4-Bui"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </toolbar>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DQY-Kz-0f5">
+                                <rect key="frame" x="0.0" y="140" width="414" height="645"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <wkWebViewConfiguration key="configuration" allowsInlineMediaPlayback="YES">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" audio="YES" video="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95178712966844248" green="1" blue="0.99339466784003094" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="HDP-NK-yEK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1FW-vz-RJf"/>
+                            <constraint firstItem="HDP-NK-yEK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3jw-4J-TAG"/>
+                            <constraint firstItem="HDP-NK-yEK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="Diy-vs-7TV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="HDP-NK-yEK" id="BeP-8v-pid"/>
+                        <outlet property="searchDisplayController" destination="U9L-12-OQi" id="D3f-mG-LBf"/>
+                        <outlet property="webViewApp" destination="DQY-Kz-0f5" id="HSh-fX-90n"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="U9L-12-OQi">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="JOk-xP-PC5"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="zmq-m9-RDj"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="5Dt-zw-292"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="0LL-EJ-nlu"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="53.623188405797109" y="27.455357142857142"/>
+        </scene>
+    </scenes>
+</document>
