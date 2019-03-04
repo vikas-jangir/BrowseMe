@@ -11,21 +11,62 @@ import UIKit
 
 extension BrowseMeViewController : UISearchBarDelegate {
     
+    
     // Implement UISearchBarDelegate delegate
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
-        
-        var urlString = searchBar.text
-        
-        if (!(urlString!.hasPrefix("http://"))) && !(urlString!.hasPrefix("https://")) {
-            urlString = "http://"+(urlString!)
+        let searchString = searchBar.text!
+        if searchString.count > 0 {
+            let encodedSeachTerm = searchString.replacingOccurrences(of: " ", with: "+")
+            let webURL = URL(string: "https://duckduckgo.com/?q=\(encodedSeachTerm)&ia=about")
+            webViewApp.load(URLRequest(url: webURL!))
         }
-        
-        if let url = URL(string: urlString!) {
-            webViewApp.load(URLRequest(url: url))
-        } else {
-            print("Error")
-        }
+        //        var urlString = searchBar.text
+        //
+        //        if (!(urlString!.hasPrefix("http://"))) && !(urlString!.hasPrefix("https://")) {
+        //            urlString = "http://"+(urlString!)
+        //        }
+        //
+        //        if let url = URL(string: urlString!) {
+        //            webViewApp.load(URLRequest(url: url))
+        //        } else {
+        //            print("Error")
+        //        }
     }
+    // https://duckduckgo.com/?q=vikas&ia=about
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        let searchString = searchBar.text!
+        if searchString.count > 0 {
+            let encodedSeachTerm = searchString.replacingOccurrences(of: " ", with: "+")
+            let webURL = URL(string: "https://duckduckgo.com/?q=\(encodedSeachTerm)&ia=about")
+            webViewApp.load(URLRequest(url: webURL!))
+        }
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+//    // Implement UISearchBarDelegate delegate
+//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+//        searchBar.resignFirstResponder()
+//
+//        var urlString = searchBar.text
+//
+//        if (!(urlString!.hasPrefix("http://"))) && !(urlString!.hasPrefix("https://")) {
+//            urlString = "http://"+(urlString!)
+//        }
+//
+//        if let url = URL(string: urlString!) {
+//            webViewApp.load(URLRequest(url: url))
+//        } else {
+//            print("Error")
+//        }
+//    }
     
 }
