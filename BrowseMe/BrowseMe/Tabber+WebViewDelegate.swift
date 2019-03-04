@@ -9,7 +9,7 @@
 import Foundation
 import WebKit
 
-extension BrowseMeViewController : WKNavigationDelegate {
+extension BrowserTab : WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         print("vikas")

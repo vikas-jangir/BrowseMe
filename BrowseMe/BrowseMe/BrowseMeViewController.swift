@@ -11,15 +11,41 @@ import WebKit
 
 class BrowseMeViewController: UIViewController  {
 
+    
+    var BrowserTabsArray : [BrowserTab] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-//        webViewApp.navigationDelegate = self
-//        webViewApp.load(URLRequest(url: URL(string: "https://www.google.com")!))
-//        webViewApp.allowsBackForwardNavigationGestures = true
+        
     }
 
-//    @IBAction func back(_ sender: Any) {
+    @IBAction func newTab(_ sender: Any) {
+    
+        let newtab = createTabWebView()
+        BrowserTabsArray.append(newtab)
+        
+    }
+    
+    @IBAction func allTabs(_ sender: Any) {
+        print("allTabs")
+        
+    }
+    
+    func createTabWebView() -> BrowserTab {
+        let tab = BrowserTab()
+        self.view.addSubview(tab.webViewTab)
+        return tab;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    //    @IBAction func back(_ sender: Any) {
 //        if webViewApp.canGoBack {
 //            webViewApp.goBack();
 //        }
