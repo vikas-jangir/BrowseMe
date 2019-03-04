@@ -20,19 +20,9 @@
                         <color key="backgroundColor" red="0.95178712966844248" green="1" blue="0.99339466784003094" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <connections>
-                        <outlet property="searchDisplayController" destination="U9L-12-OQi" id="D3f-mG-LBf"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="U9L-12-OQi">
-                    <connections>
-                        <outlet property="delegate" destination="BYZ-38-t0r" id="JOk-xP-PC5"/>
-                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="zmq-m9-RDj"/>
-                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="5Dt-zw-292"/>
-                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="0LL-EJ-nlu"/>
-                    </connections>
-                </searchDisplayController>
+                <searchDisplayController id="U9L-12-OQi"/>
             </objects>
             <point key="canvasLocation" x="53.623188405797109" y="27.455357142857142"/>
         </scene>
