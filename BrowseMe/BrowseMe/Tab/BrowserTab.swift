@@ -22,7 +22,7 @@ class BrowserTab: NSObject {
     
     
     func createWebView() {
-        self.webViewTab.frame = CGRect(x: 0, y: 40, width: UIScreen.main.bounds.width, height: 500)
+        self.webViewTab.frame = CGRect(x: 0, y: 40, width: UIScreen.main.bounds.width, height: 700)
         self.webViewTab.navigationDelegate = self
         self.webViewTab.load(URLRequest(url: URL(string: "https://www.google.com")!))
     }
