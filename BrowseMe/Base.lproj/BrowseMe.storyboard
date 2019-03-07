@@ -18,14 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wS-EV-szE">
-                                <rect key="frame" x="33" y="773" width="137" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="ALL Tabs"/>
-                                <connections>
-                                    <action selector="allTabs:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e0Z-X7-PaP"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="npH-o8-ak7">
                                 <rect key="frame" x="178" y="773" width="211" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -34,10 +26,32 @@
                                     <action selector="newTab:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Iyu-jG-vKy"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wS-EV-szE">
+                                <rect key="frame" x="33" y="773" width="137" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ALL Tabs"/>
+                                <connections>
+                                    <action selector="allTabs:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e0Z-X7-PaP"/>
+                                </connections>
+                            </button>
+                            <textField clipsSubviews="YES" clearsContextBeforeDrawing="NO" alpha="0.75" contentMode="scaleToFill" semanticContentAttribute="spatial" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="  Search or type web address" textAlignment="justified" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Urm-hl-upM">
+                                <rect key="frame" x="20" y="414" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="go" smartDashesType="yes" smartInsertDeleteType="yes" textContentType="url"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="RiN-lM-nsQ"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.95178712966844248" green="1" blue="0.99339466784003094" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="searchBarTextField" destination="Urm-hl-upM" id="qbL-7v-rgJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <searchDisplayController id="U9L-12-OQi"/>

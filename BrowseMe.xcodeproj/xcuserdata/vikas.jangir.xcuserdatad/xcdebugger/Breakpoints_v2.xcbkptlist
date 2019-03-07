@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BrowseMe/BrowseMe/BrowseMeViewController.swift"
-            timestampString = "573398418.357927"
+            filePath = "BrowseMe/BrowseMe/TabManager/TabManager.swift"
+            timestampString = "573636385.975425"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "allTabs(_:)"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "createTab(url:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

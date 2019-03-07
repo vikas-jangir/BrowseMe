@@ -12,30 +12,39 @@ import WebKit
 class BrowseMeViewController: UIViewController  {
 
     
-    var BrowserTabsArray : [BrowserTab] = []
+    @IBOutlet weak var searchBarTextField: UITextField!
+    
+    var tabManger = TabManager()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBarCustomization()
         // Do any additional setup after loading the view, typically from a nib.
         
     }
 
     @IBAction func newTab(_ sender: Any) {
-    
-        let newtab = createTabWebView()
-        BrowserTabsArray.append(newtab)
-        
+        createTabWebView(url: "https://duckduckgo.com/")
+        searchBarTextField.text = ""
     }
     
     @IBAction func allTabs(_ sender: Any) {
+        tabManger.selectedTab?.takeSnapShot()
         print("allTabs")
         
+        
+        var temp = UIView.init(frame: CGRect(x: 0, y: 0, width: 420, height: 420))
+        var tempimage = tabManger.selectedTab?.snapShotImage
+        var tempView = UIImageView(image: tempimage)
+        tempView.frame = CGRect(x: 0, y: 0, width: 100, height: 200)
+        
+        self.view.addSubview(tempView)
     }
     
-    func createTabWebView() -> BrowserTab {
-        let tab = BrowserTab()
-        self.view.addSubview(tab.webViewTab)
-        return tab;
+    func createTabWebView(url : NSString) {
+        tabManger.createTab(url: url)
+        tabManger.addWebViewIntoVC(view: self.view)
     }
     
     

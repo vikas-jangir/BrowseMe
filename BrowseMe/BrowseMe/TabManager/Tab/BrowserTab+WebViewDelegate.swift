@@ -12,9 +12,12 @@ import WebKit
 extension BrowserTab : WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+
+        
         print("vikas")
     }
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+
          print("vikas")
     }
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
