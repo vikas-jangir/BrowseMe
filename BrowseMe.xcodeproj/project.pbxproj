@@ -10,6 +10,8 @@
 		042D2EB3222D233500B91DF6 /* BrowserTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D2EB2222D233500B91DF6 /* BrowserTab.swift */; };
 		042D2EB4222D45C900B91DF6 /* BrowserTab+WebViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ADBDB22212BE4C0082BF02 /* BrowserTab+WebViewDelegate.swift */; };
 		042D2EBC222FD60000B91DF6 /* TabManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D2EBB222FD60000B91DF6 /* TabManager.swift */; };
+		042D2EBE2231256500B91DF6 /* TabCarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D2EBD2231256500B91DF6 /* TabCarouselViewController.swift */; };
+		042D2EC022312B1B00B91DF6 /* TabCarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D2EBF22312B1B00B91DF6 /* TabCarouselCollectionViewCell.swift */; };
 		048EE3322210457D00F8D9AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048EE3312210457D00F8D9AE /* AppDelegate.swift */; };
 		048EE3342210457D00F8D9AE /* BrowseMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048EE3332210457D00F8D9AE /* BrowseMeViewController.swift */; };
 		048EE3372210457D00F8D9AE /* BrowseMe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048EE3352210457D00F8D9AE /* BrowseMe.storyboard */; };
@@ -22,6 +24,8 @@
 /* Begin PBXFileReference section */
 		042D2EB2222D233500B91DF6 /* BrowserTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserTab.swift; sourceTree = "<group>"; };
 		042D2EBB222FD60000B91DF6 /* TabManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabManager.swift; sourceTree = "<group>"; };
+		042D2EBD2231256500B91DF6 /* TabCarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCarouselViewController.swift; sourceTree = "<group>"; };
+		042D2EBF22312B1B00B91DF6 /* TabCarouselCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCarouselCollectionViewCell.swift; sourceTree = "<group>"; };
 		048EE32E2210457D00F8D9AE /* BrowseMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrowseMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		048EE3312210457D00F8D9AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		048EE3332210457D00F8D9AE /* BrowseMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseMeViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +67,17 @@
 			path = TabManager;
 			sourceTree = "<group>";
 		};
+		0485B36F22322D9100F50C72 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				048EE3332210457D00F8D9AE /* BrowseMeViewController.swift */,
+				04ADBDB42212BEA60082BF02 /* BrowseMeViewController+SearchBarDelegate.swift */,
+				042D2EBD2231256500B91DF6 /* TabCarouselViewController.swift */,
+				042D2EBF22312B1B00B91DF6 /* TabCarouselCollectionViewCell.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		048EE3252210457D00F8D9AE = {
 			isa = PBXGroup;
 			children = (
@@ -96,9 +111,8 @@
 		04ADBDB12212BD250082BF02 /* BrowseMe */ = {
 			isa = PBXGroup;
 			children = (
+				0485B36F22322D9100F50C72 /* ViewController */,
 				042D2EB8222FCB8F00B91DF6 /* TabManager */,
-				048EE3332210457D00F8D9AE /* BrowseMeViewController.swift */,
-				04ADBDB42212BEA60082BF02 /* BrowseMeViewController+SearchBarDelegate.swift */,
 			);
 			path = BrowseMe;
 			sourceTree = "<group>";
@@ -177,9 +191,11 @@
 				042D2EB4222D45C900B91DF6 /* BrowserTab+WebViewDelegate.swift in Sources */,
 				048EE33A2210457D00F8D9AE /* BrowseMe.xcdatamodeld in Sources */,
 				04ADBDB52212BEA60082BF02 /* BrowseMeViewController+SearchBarDelegate.swift in Sources */,
+				042D2EC022312B1B00B91DF6 /* TabCarouselCollectionViewCell.swift in Sources */,
 				042D2EBC222FD60000B91DF6 /* TabManager.swift in Sources */,
 				048EE3342210457D00F8D9AE /* BrowseMeViewController.swift in Sources */,
 				048EE3322210457D00F8D9AE /* AppDelegate.swift in Sources */,
+				042D2EBE2231256500B91DF6 /* TabCarouselViewController.swift in Sources */,
 				042D2EB3222D233500B91DF6 /* BrowserTab.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -33,13 +33,32 @@ class BrowseMeViewController: UIViewController  {
         tabManger.selectedTab?.takeSnapShot()
         print("allTabs")
         
+//        let tabCarosoulVC = TabCarouselViewController()
+//        
+//        self.present(tabCarosoulVC, animated: true) {
+//            print("done")
+//        }
         
-        var temp = UIView.init(frame: CGRect(x: 0, y: 0, width: 420, height: 420))
-        var tempimage = tabManger.selectedTab?.snapShotImage
-        var tempView = UIImageView(image: tempimage)
-        tempView.frame = CGRect(x: 0, y: 0, width: 100, height: 200)
         
-        self.view.addSubview(tempView)
+        
+//        let tabCarosoulVC = TabCarouselViewController()
+//        self.addChild(tabCarosoulVC)
+//        self.view.addSubview(tabCarosoulVC.view)
+//        tabCarosoulVC.didMove(toParent: self)
+        
+//        var temp = UIView.init(frame: CGRect(x: 0, y: 0, width: 420, height: 420))
+//        var tempimage = tabManger.selectedTab?.snapShotImage
+//        var tempView = UIImageView(image: tempimage)
+//        tempView.frame = CGRect(x: 0, y: 0, width: 100, height: 200)
+//
+//        self.view.addSubview(tempView)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is TabCarouselViewController {
+            let vc = segue.destination as? TabCarouselViewController
+            vc?.tabManger = self.tabManger
+        }
     }
     
     func createTabWebView(url : NSString) {
@@ -47,28 +66,6 @@ class BrowseMeViewController: UIViewController  {
         tabManger.addWebViewIntoVC(view: self.view)
     }
     
-    
-    
-    
-    
-    
-    
-    
-    //    @IBAction func back(_ sender: Any) {
-//        if webViewApp.canGoBack {
-//            webViewApp.goBack();
-//        }
-//    }
-//
-//    @IBAction func refresh(_ sender: Any) {
-//        webViewApp.reload()
-//    }
-//
-//    @IBAction func next(_ sender: Any) {
-//        if webViewApp.canGoForward {
-//            webViewApp.goForward()
-//        }
-//    }
     
 }
 

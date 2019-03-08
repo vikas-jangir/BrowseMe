@@ -52,4 +52,8 @@ class TabManager: NSObject {
         return TabManager.allTabs[selectedIndex]
     }
     
+    func tabAtIndex(index : Int) -> BrowserTab {
+        return TabManager.allTabs[index]
+    }
+    
 }
