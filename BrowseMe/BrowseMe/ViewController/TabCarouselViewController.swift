@@ -8,10 +8,11 @@
 
 import UIKit
 
-class TabCarouselViewController: UIViewController {
+class TabCarouselViewController: UIViewController , TabCarouselCollectionViewCellDelegate{
 
     var tabManger = TabManager()
     let cellScaling : CGFloat = 0.6
+    var TabCarouselVCDelegate: TabCarouselVCDelegate?
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var tabCollectionView: UICollectionView!
@@ -20,6 +21,8 @@ class TabCarouselViewController: UIViewController {
         setUpViewController()
         
         tabCollectionView?.dataSource = self
+        
+        
         // Do any additional setup after loading the view.
     }
     
@@ -48,19 +51,29 @@ class TabCarouselViewController: UIViewController {
     @IBAction func closeVC(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
+    // MARK:- CarouselCollectionViewCellDelegate
+    func CarouselCollectionViewCell(closeTab CarouselCollectionViewCell: TabCarouselCollectionViewCell) {
+         let indexPath = tabCollectionView.indexPath(for: CarouselCollectionViewCell)?.row
+        TabCarouselVCDelegate?.TabCarouselVC!(self, closeTabWebView: tabManger.tabAtIndex(index: indexPath!)!)
+        self.tabCollectionView.reloadData()
+    }
+    func CarouselCollectionViewCell(openTabWebview CarouselCollectionViewCell: TabCarouselCollectionViewCell) {
+        
+    }
 
 }
 
 
 
-extension TabCarouselViewController : UICollectionViewDataSource {
+extension TabCarouselViewController : UICollectionViewDataSource , UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TabCarouselCollectionViewCell", for: indexPath) as! TabCarouselCollectionViewCell
-
+        cell.TabCarouselCollectionViewCellDelegate = (self as TabCarouselCollectionViewCellDelegate)
         let browseTab =  tabManger.tabAtIndex(index: indexPath.row)
-        cell.tabTitial.text = browseTab.bTabWebView.url?.host
-        cell.tabImage.image = browseTab.snapShotImage
+        cell.tabTitial.text = browseTab?.bTabWebView.url?.host
+        cell.tabImage.image = browseTab?.snapShotImage
         cell.roundCorner()
         cell.setCellShadow()
         return cell
@@ -73,4 +86,24 @@ extension TabCarouselViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
      return tabManger.count
     }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("asfadsfsdaf")
+    }
+
 }
+
+
+
+@objc
+protocol TabCarouselVCDelegate {
+    @objc optional  func TabCarouselVC(_ TabCarouselVC: TabCarouselViewController, closeTabWebView webView : BrowserTab)
+    @objc optional  func TabCarouselVC(openNewTabWebview TabCarouselVC: TabCarouselViewController)
+}
+
+
+//- (IBAction)actionAddToCart:(id)sender {
+//    NSIndexPath *indexPath;
+//    indexPath = [self.collectionView indexPathForItemAtPoint:[self.collectionView convertPoint:sender.center fromView:sender.superview]];
+//    ...
+//}

@@ -9,11 +9,11 @@
 import UIKit
 import WebKit
 
-class BrowseMeViewController: UIViewController  {
+class BrowseMeViewController: UIViewController , TabCarouselVCDelegate  {
 
     
     @IBOutlet weak var searchBarTextField: UITextField!
-    
+   
     var tabManger = TabManager()
     
     
@@ -30,34 +30,15 @@ class BrowseMeViewController: UIViewController  {
     }
     
     @IBAction func allTabs(_ sender: Any) {
-        tabManger.selectedTab?.takeSnapShot()
         print("allTabs")
         
-//        let tabCarosoulVC = TabCarouselViewController()
-//        
-//        self.present(tabCarosoulVC, animated: true) {
-//            print("done")
-//        }
-        
-        
-        
-//        let tabCarosoulVC = TabCarouselViewController()
-//        self.addChild(tabCarosoulVC)
-//        self.view.addSubview(tabCarosoulVC.view)
-//        tabCarosoulVC.didMove(toParent: self)
-        
-//        var temp = UIView.init(frame: CGRect(x: 0, y: 0, width: 420, height: 420))
-//        var tempimage = tabManger.selectedTab?.snapShotImage
-//        var tempView = UIImageView(image: tempimage)
-//        tempView.frame = CGRect(x: 0, y: 0, width: 100, height: 200)
-//
-//        self.view.addSubview(tempView)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is TabCarouselViewController {
             let vc = segue.destination as? TabCarouselViewController
             vc?.tabManger = self.tabManger
+            vc?.TabCarouselVCDelegate = self as TabCarouselVCDelegate
         }
     }
     
@@ -66,6 +47,37 @@ class BrowseMeViewController: UIViewController  {
         tabManger.addWebViewIntoVC(view: self.view)
     }
     
+    // MARK:- impliment TabCarouselVCDelegate
+    
+    func TabCarouselVC(_ TabCarouselVC: TabCarouselViewController, closeTabWebView webView: BrowserTab) {
+        tabManger.removeTab(browserTab: webView)
+    }
+    func TabCarouselVC(openNewTabWebview TabCarouselVC: TabCarouselViewController) {
+        
+    }
     
 }
 
+//@objc
+//protocol BrowseMeVCDelegate {
+//    @objc optional  func BrowserVC(_ browserVC: BrowseMeViewController, closeTabWebView webView : BrowserTab)
+//    @objc optional  func BrowserVC(_ browserVC: BrowseMeViewController, openTabWebview webView : BrowserTab)
+//    @objc optional  func BrowserVC(_ browserVC: BrowseMeViewController, urlChangeinWebView webView : BrowserTab)
+//}
+
+
+
+
+
+
+
+
+
+//
+//protocol TabDelegate {
+//    func tab(_ tab: Tab, didAddSnackbar bar: SnackBar)
+//    func tab(_ tab: Tab, didRemoveSnackbar bar: SnackBar)
+//    func tab(_ tab: Tab, didSelectFindInPageForSelection selection: String)
+//    @objc optional func tab(_ tab: Tab, didCreateWebView webView: WKWebView)
+//    @objc optional func tab(_ tab: Tab, willDeleteWebView webView: WKWebView)
+//}

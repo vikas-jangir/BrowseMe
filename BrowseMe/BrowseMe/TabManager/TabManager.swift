@@ -11,7 +11,7 @@ import UIKit
 
 class TabManager: NSObject {
     static var allTabs : [BrowserTab] = []
-    var selectedIndex : Int = -1
+   private(set) var selectedIndex : Int = -1
     
    
     
@@ -19,7 +19,7 @@ class TabManager: NSObject {
     func createTab(url : NSString) {
         let browserTab = BrowserTab(url: url)
         TabManager.allTabs.append(browserTab);
-        selectedIndex += 1
+        selectedIndex = count-1
     }
     
     func addWebViewIntoVC(view : UIView)  {
@@ -52,8 +52,34 @@ class TabManager: NSObject {
         return TabManager.allTabs[selectedIndex]
     }
     
-    func tabAtIndex(index : Int) -> BrowserTab {
-        return TabManager.allTabs[index]
+    func tabAtIndex(index : Int) -> BrowserTab? {
+        if index < count {
+             return TabManager.allTabs[index]
+        } else {
+            return nil;
+        }
+       
     }
+    
+    func removeTab(browserTab : BrowserTab) {
+        let copy = TabManager.allTabs
+        
+        for i in 0..<copy.count {
+            if copy[i] == browserTab {
+                TabManager.allTabs[i].bTabWebView.removeFromSuperview()
+                TabManager.allTabs.remove(at: i)
+            }
+        }
+        
+        selectedIndex = count-1
+    }
+    
+    func addTabtotheView(view : UIView ,index : Int)  {
+        if let tab = tabAtIndex(index: index) {
+            selectedIndex = index
+            addWebViewIntoVC(view: view)
+        }
+    }
+    
     
 }
