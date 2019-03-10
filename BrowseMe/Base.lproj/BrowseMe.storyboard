@@ -18,39 +18,91 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="npH-o8-ak7">
-                                <rect key="frame" x="178" y="773" width="211" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="npH-o8-ak7">
+                                <rect key="frame" x="104" y="773" width="60" height="75"/>
                                 <state key="normal" title="New Tab"/>
                                 <connections>
                                     <action selector="newTab:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Iyu-jG-vKy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wS-EV-szE">
-                                <rect key="frame" x="33" y="773" width="137" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wS-EV-szE">
+                                <rect key="frame" x="33" y="773" width="63" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="rW2-ya-UNP"/>
+                                </constraints>
                                 <state key="normal" title="ALL Tabs"/>
                                 <connections>
                                     <action selector="allTabs:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e0Z-X7-PaP"/>
                                     <segue destination="RFU-Lc-fmu" kind="presentation" id="lK2-zH-5MF"/>
                                 </connections>
                             </button>
-                            <textField clipsSubviews="YES" clearsContextBeforeDrawing="NO" alpha="0.75" contentMode="scaleToFill" semanticContentAttribute="spatial" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="  Search or type web address" textAlignment="justified" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Urm-hl-upM">
-                                <rect key="frame" x="20" y="397" width="374" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="go" smartDashesType="yes" smartInsertDeleteType="yes" textContentType="url"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="RiN-lM-nsQ"/>
-                                </connections>
-                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q0f-qI-BNl">
+                                <rect key="frame" x="0.0" y="57" width="414" height="50"/>
+                                <subviews>
+                                    <textField clipsSubviews="YES" clearsContextBeforeDrawing="NO" alpha="0.75" contentMode="scaleToFill" semanticContentAttribute="spatial" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="  Search or type web address" textAlignment="justified" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Urm-hl-upM">
+                                        <rect key="frame" x="8" y="8" width="337" height="34"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="go" smartDashesType="yes" smartInsertDeleteType="yes" textContentType="url"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="RiN-lM-nsQ"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oNQ-SH-U0w">
+                                        <rect key="frame" x="355" y="0.0" width="10" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="oNQ-SH-U0w" secondAttribute="height" multiplier="1:5" id="9kT-mc-dKC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yk-oO-YR7">
+                                        <rect key="frame" x="380" y="12" width="26" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="7yk-oO-YR7" secondAttribute="height" multiplier="1:1" id="UNX-9u-XIc"/>
+                                        </constraints>
+                                        <state key="normal" title="s" image="setting"/>
+                                        <connections>
+                                            <action selector="settingButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Dk-kc-Hd6"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Urm-hl-upM" firstAttribute="leading" secondItem="Q0f-qI-BNl" secondAttribute="leading" constant="8" id="8Wa-yl-9mc"/>
+                                    <constraint firstAttribute="trailing" secondItem="7yk-oO-YR7" secondAttribute="trailing" constant="8" id="CCP-JZ-dLn"/>
+                                    <constraint firstAttribute="bottom" secondItem="oNQ-SH-U0w" secondAttribute="bottom" id="CTt-tT-K1Q"/>
+                                    <constraint firstItem="oNQ-SH-U0w" firstAttribute="top" secondItem="Q0f-qI-BNl" secondAttribute="top" id="Jf0-Nx-JXl"/>
+                                    <constraint firstItem="7yk-oO-YR7" firstAttribute="top" secondItem="Q0f-qI-BNl" secondAttribute="top" constant="12" id="X0p-Lw-7Xr"/>
+                                    <constraint firstItem="oNQ-SH-U0w" firstAttribute="leading" secondItem="Urm-hl-upM" secondAttribute="trailing" constant="10" id="YbY-m0-K40"/>
+                                    <constraint firstAttribute="height" constant="50" id="cxC-Fy-A9f"/>
+                                    <constraint firstAttribute="bottom" secondItem="Urm-hl-upM" secondAttribute="bottom" constant="8" id="fOL-P1-s3Z"/>
+                                    <constraint firstItem="7yk-oO-YR7" firstAttribute="leading" secondItem="oNQ-SH-U0w" secondAttribute="trailing" constant="15" id="jIX-sy-Nwu"/>
+                                    <constraint firstAttribute="bottom" secondItem="7yk-oO-YR7" secondAttribute="bottom" constant="12" id="joj-1q-1yU"/>
+                                    <constraint firstItem="Urm-hl-upM" firstAttribute="top" secondItem="Q0f-qI-BNl" secondAttribute="top" constant="8" id="oKW-Km-a9t"/>
+                                    <constraint firstItem="oNQ-SH-U0w" firstAttribute="leading" secondItem="Urm-hl-upM" secondAttribute="trailing" constant="10" id="rb4-S1-ot3"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.95178712966844248" green="1" blue="0.99339466784003094" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="npH-o8-ak7" secondAttribute="trailing" symbolic="YES" id="3cZ-BB-vvF"/>
+                            <constraint firstItem="npH-o8-ak7" firstAttribute="leading" secondItem="3wS-EV-szE" secondAttribute="trailing" constant="8" symbolic="YES" id="65p-Cg-ws9"/>
+                            <constraint firstItem="3wS-EV-szE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="33" id="LAs-ti-Vgo"/>
+                            <constraint firstItem="Q0f-qI-BNl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="13" id="RUP-zZ-FHA"/>
+                            <constraint firstItem="3wS-EV-szE" firstAttribute="baseline" secondItem="npH-o8-ak7" secondAttribute="firstBaseline" id="WWN-32-ipa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3wS-EV-szE" secondAttribute="bottom" constant="14" id="pYK-Ya-lvs"/>
+                            <constraint firstItem="Q0f-qI-BNl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pzo-5W-p7u"/>
+                            <constraint firstItem="Q0f-qI-BNl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uhc-pt-k1Z"/>
+                            <constraint firstItem="3wS-EV-szE" firstAttribute="top" secondItem="npH-o8-ak7" secondAttribute="top" id="wA7-NF-WWO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="barView" destination="Q0f-qI-BNl" id="aKD-ob-Ibj"/>
+                        <outlet property="numberOfTabs" destination="oNQ-SH-U0w" id="LGD-4c-kTr"/>
                         <outlet property="searchBarTextField" destination="Urm-hl-upM" id="qbL-7v-rgJ"/>
                     </connections>
                 </viewController>
@@ -146,5 +198,6 @@
     </scenes>
     <resources>
         <image name="close" width="128" height="128"/>
+        <image name="setting" width="128" height="128"/>
     </resources>
 </document>

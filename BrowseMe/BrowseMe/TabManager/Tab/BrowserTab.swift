@@ -28,7 +28,7 @@ class BrowserTab: NSObject {
     func createWebviewWithUrl(url : NSString) {
         bTabWebViewUrl = URL(string: url as String)
         let webConfiguration = WKWebViewConfiguration()
-        bTabWebView = WKWebView(frame: CGRect(x: 0, y: 100, width: UIScreen.main.bounds.width, height: 700), configuration: webConfiguration)
+        bTabWebView = WKWebView(frame: CGRect(x: 0, y: 110, width: UIScreen.main.bounds.width, height: 700), configuration: webConfiguration)
         bTabWebView.navigationDelegate = self
         
         bTabWebView.allowsBackForwardNavigationGestures = true

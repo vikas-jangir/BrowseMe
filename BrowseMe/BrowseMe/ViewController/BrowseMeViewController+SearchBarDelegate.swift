@@ -14,7 +14,7 @@ extension BrowseMeViewController : UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         searchBarTextField.text = tabManger.selectedTab?.bTabSearchItem == nil ? "" : tabManger.selectedTab?.bTabSearchItem as! String
-        self.searchBarAnimation(y_axis: view.safeAreaInsets.top+5)
+     //   self.searchBarAnimation(y_axis: view.safeAreaInsets.top+5)
         
          self.hideKeyboardWhenTappedAround()
     }
@@ -60,7 +60,11 @@ extension BrowseMeViewController : UITextFieldDelegate {
     
     
     
-    // MARK: Healper methods
+// MARK: Healper methods for Views
+    
+    func searchBarUI() {
+        
+    }
     
     func searchBarCustomization() {
         let padding = UIView.init(frame: CGRect(x: 0, y: 0, width: self.searchBarTextField.frame.height+5, height: self.searchBarTextField.frame.height));
@@ -93,6 +97,7 @@ extension BrowseMeViewController : UITextFieldDelegate {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
+    
     
 }
 

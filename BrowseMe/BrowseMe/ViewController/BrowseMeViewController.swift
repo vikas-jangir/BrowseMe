@@ -13,13 +13,15 @@ class BrowseMeViewController: UIViewController , TabCarouselVCDelegate  {
 
     
     @IBOutlet weak var searchBarTextField: UITextField!
-   
+    @IBOutlet weak var numberOfTabs: UILabel!
+    @IBOutlet weak var barView: UIView!
+    
     var tabManger = TabManager()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchBarCustomization()
+       setUpVC()
         // Do any additional setup after loading the view, typically from a nib.
         
     }
@@ -27,12 +29,17 @@ class BrowseMeViewController: UIViewController , TabCarouselVCDelegate  {
     @IBAction func newTab(_ sender: Any) {
         createTabWebView(url: "https://duckduckgo.com/")
         searchBarTextField.text = ""
+        updateNumberOfTabsLabel()
     }
     
     @IBAction func allTabs(_ sender: Any) {
         print("allTabs")
         
     }
+    
+    @IBAction func settingButton(_ sender: Any) {
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is TabCarouselViewController {
@@ -45,15 +52,27 @@ class BrowseMeViewController: UIViewController , TabCarouselVCDelegate  {
     func createTabWebView(url : NSString) {
         tabManger.createTab(url: url)
         tabManger.addWebViewIntoVC(view: self.view)
+        updateNumberOfTabsLabel()
     }
     
     // MARK:- impliment TabCarouselVCDelegate
     
     func TabCarouselVC(_ TabCarouselVC: TabCarouselViewController, closeTabWebView webView: BrowserTab) {
         tabManger.removeTab(browserTab: webView)
+        updateNumberOfTabsLabel()
     }
     func TabCarouselVC(openNewTabWebview TabCarouselVC: TabCarouselViewController) {
         
+    }
+    
+    // MARK:- SetUpVC
+    func setUpVC() {
+        
+         searchBarCustomization()
+    }
+    
+    func updateNumberOfTabsLabel() {
+        numberOfTabs.text = String(TabManager.allTabs.count)
     }
     
 }
