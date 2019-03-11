@@ -15,6 +15,7 @@ class BrowseMeViewController: UIViewController , TabCarouselVCDelegate  {
     @IBOutlet weak var searchBarTextField: UITextField!
     @IBOutlet weak var numberOfTabs: UILabel!
     @IBOutlet weak var barView: UIView!
+    @IBOutlet weak var webViewBrowseVC: UIView!
     
     var tabManger = TabManager()
     
@@ -66,7 +67,7 @@ class BrowseMeViewController: UIViewController , TabCarouselVCDelegate  {
     
     func createTabWebView(url : NSString) {
         tabManger.createTab(url: url)
-        tabManger.addWebViewIntoVC(view: self.view)
+        tabManger.addWebViewIntoVC(view: self.webViewBrowseVC)
         updateNumberOfTabsLabel()
     }
     
@@ -77,7 +78,7 @@ class BrowseMeViewController: UIViewController , TabCarouselVCDelegate  {
         updateNumberOfTabsLabel()
     }
     func TabCarouselVC(_ TabCarouselVC: TabCarouselViewController, selectedTabIndex: Int) {
-        tabManger.addTabtotheView(view: self.view, index: selectedTabIndex)
+        tabManger.addTabtotheView(view: self.webViewBrowseVC, index: selectedTabIndex)
     }
     
     // MARK:- SetUpVC

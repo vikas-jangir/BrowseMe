@@ -120,19 +120,25 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="J9V-ce-C7c" secondAttribute="height" multiplier="414:49" id="Qy4-3X-EBg"/>
-                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cyV-tj-XfT">
+                                <rect key="frame" x="0.0" y="107" width="414" height="695"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.95178712966844248" green="1" blue="0.99339466784003094" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="J9V-ce-C7c" secondAttribute="bottom" constant="11" id="Gys-jQ-bIy"/>
+                            <constraint firstItem="J9V-ce-C7c" firstAttribute="top" secondItem="cyV-tj-XfT" secondAttribute="bottom" id="HZ4-YW-GBg"/>
+                            <constraint firstItem="cyV-tj-XfT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MCh-1z-RP3"/>
+                            <constraint firstItem="cyV-tj-XfT" firstAttribute="top" secondItem="Q0f-qI-BNl" secondAttribute="bottom" id="OMV-C4-PrG"/>
                             <constraint firstItem="Q0f-qI-BNl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="13" id="RUP-zZ-FHA"/>
-                            <constraint firstItem="J9V-ce-C7c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UaF-se-bmj"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="J9V-ce-C7c" secondAttribute="bottom" constant="11" id="dB5-3F-yu9"/>
+                            <constraint firstItem="J9V-ce-C7c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Una-Kz-cxd"/>
+                            <constraint firstItem="J9V-ce-C7c" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="802" id="lLG-ZU-Pt2"/>
                             <constraint firstItem="Q0f-qI-BNl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pzo-5W-p7u"/>
                             <constraint firstItem="Q0f-qI-BNl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uhc-pt-k1Z"/>
-                            <constraint firstItem="J9V-ce-C7c" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="vqP-TW-kW0"/>
+                            <constraint firstItem="J9V-ce-C7c" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="xSe-rn-PB0"/>
+                            <constraint firstItem="cyV-tj-XfT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ymp-8b-iCh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -140,6 +146,7 @@
                         <outlet property="barView" destination="Q0f-qI-BNl" id="aKD-ob-Ibj"/>
                         <outlet property="numberOfTabs" destination="oNQ-SH-U0w" id="LGD-4c-kTr"/>
                         <outlet property="searchBarTextField" destination="Urm-hl-upM" id="qbL-7v-rgJ"/>
+                        <outlet property="webViewBrowseVC" destination="cyV-tj-XfT" id="DSg-Lx-reK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

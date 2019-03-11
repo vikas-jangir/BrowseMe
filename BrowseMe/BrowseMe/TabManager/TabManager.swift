@@ -25,6 +25,7 @@ class TabManager: NSObject {
     func addWebViewIntoVC(view : UIView)  {
         if selectedIndex != -1 {
             removeWebViewFromVC(view: view)
+            TabManager.allTabs[selectedIndex].bTabWebView.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height)
             view.addSubview(TabManager.allTabs[selectedIndex].bTabWebView)
         }
     }
