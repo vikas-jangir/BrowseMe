@@ -40,6 +40,21 @@ class BrowseMeViewController: UIViewController , TabCarouselVCDelegate  {
     @IBAction func settingButton(_ sender: Any) {
     }
     
+    @IBAction func refreshButton(_ sender: Any) {
+        tabManger.selectedTab?.refresh()
+    }
+    
+    @IBAction func forwardButton(_ sender: Any) {
+        tabManger.selectedTab?.goForward()
+    }
+    
+    @IBAction func backWardButton(_ sender: Any) {
+        tabManger.selectedTab?.goBack()
+    }
+    
+    @IBAction func homeButton(_ sender: Any) {
+        tabManger.selectedTab?.loadUrlInWebview(url: "https://duckduckgo.com/")
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is TabCarouselViewController {
@@ -61,8 +76,8 @@ class BrowseMeViewController: UIViewController , TabCarouselVCDelegate  {
         tabManger.removeTab(browserTab: webView)
         updateNumberOfTabsLabel()
     }
-    func TabCarouselVC(openNewTabWebview TabCarouselVC: TabCarouselViewController) {
-        
+    func TabCarouselVC(_ TabCarouselVC: TabCarouselViewController, selectedTabIndex: Int) {
+        tabManger.addTabtotheView(view: self.view, index: selectedTabIndex)
     }
     
     // MARK:- SetUpVC

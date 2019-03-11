@@ -18,29 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="npH-o8-ak7">
-                                <rect key="frame" x="104" y="773" width="60" height="75"/>
-                                <state key="normal" title="New Tab"/>
-                                <connections>
-                                    <action selector="newTab:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Iyu-jG-vKy"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wS-EV-szE">
-                                <rect key="frame" x="33" y="773" width="63" height="75"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="rW2-ya-UNP"/>
-                                </constraints>
-                                <state key="normal" title="ALL Tabs"/>
-                                <connections>
-                                    <action selector="allTabs:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e0Z-X7-PaP"/>
-                                    <segue destination="RFU-Lc-fmu" kind="presentation" id="lK2-zH-5MF"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q0f-qI-BNl">
                                 <rect key="frame" x="0.0" y="57" width="414" height="50"/>
                                 <subviews>
                                     <textField clipsSubviews="YES" clearsContextBeforeDrawing="NO" alpha="0.75" contentMode="scaleToFill" semanticContentAttribute="spatial" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="  Search or type web address" textAlignment="justified" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Urm-hl-upM">
-                                        <rect key="frame" x="8" y="8" width="337" height="34"/>
+                                        <rect key="frame" x="8" y="8" width="317" height="34"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -49,10 +31,10 @@
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="RiN-lM-nsQ"/>
                                         </connections>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oNQ-SH-U0w">
-                                        <rect key="frame" x="355" y="0.0" width="10" height="50"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oNQ-SH-U0w">
+                                        <rect key="frame" x="335" y="0.0" width="30" height="50"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="oNQ-SH-U0w" secondAttribute="height" multiplier="1:5" id="9kT-mc-dKC"/>
+                                            <constraint firstAttribute="width" secondItem="oNQ-SH-U0w" secondAttribute="height" multiplier="3:5" id="9kT-mc-dKC"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -82,21 +64,75 @@
                                     <constraint firstItem="7yk-oO-YR7" firstAttribute="leading" secondItem="oNQ-SH-U0w" secondAttribute="trailing" constant="15" id="jIX-sy-Nwu"/>
                                     <constraint firstAttribute="bottom" secondItem="7yk-oO-YR7" secondAttribute="bottom" constant="12" id="joj-1q-1yU"/>
                                     <constraint firstItem="Urm-hl-upM" firstAttribute="top" secondItem="Q0f-qI-BNl" secondAttribute="top" constant="8" id="oKW-Km-a9t"/>
-                                    <constraint firstItem="oNQ-SH-U0w" firstAttribute="leading" secondItem="Urm-hl-upM" secondAttribute="trailing" constant="10" id="rb4-S1-ot3"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J9V-ce-C7c">
+                                <rect key="frame" x="0.0" y="802" width="414" height="49"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZe-98-Ju6">
+                                        <rect key="frame" x="65" y="4" width="42" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="for" image="forward"/>
+                                        <connections>
+                                            <action selector="forwardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9b0-PQ-CYu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIa-P2-jiX">
+                                        <rect key="frame" x="119" y="4" width="40" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Refresh" image="refersh"/>
+                                        <connections>
+                                            <action selector="refreshButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9WE-Qc-jdN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sfr-Nu-Lvt">
+                                        <rect key="frame" x="223" y="4" width="40" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Home" image="home"/>
+                                        <connections>
+                                            <action selector="homeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TcO-WJ-kjl"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lh8-cV-Zo7">
+                                        <rect key="frame" x="347" y="4" width="40" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Home" image="add"/>
+                                        <connections>
+                                            <action selector="newTab:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NAT-DR-Mfz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXq-NP-RT6">
+                                        <rect key="frame" x="17" y="4" width="42" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="back" image="back"/>
+                                        <connections>
+                                            <action selector="backWardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wmW-wZ-Tld"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wS-EV-szE">
+                                        <rect key="frame" x="284" y="4" width="40" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="ALL Tabs" image="allTabs"/>
+                                        <connections>
+                                            <action selector="allTabs:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e0Z-X7-PaP"/>
+                                            <segue destination="RFU-Lc-fmu" kind="presentation" id="lK2-zH-5MF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="J9V-ce-C7c" secondAttribute="height" multiplier="414:49" id="Qy4-3X-EBg"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.95178712966844248" green="1" blue="0.99339466784003094" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="npH-o8-ak7" secondAttribute="trailing" symbolic="YES" id="3cZ-BB-vvF"/>
-                            <constraint firstItem="npH-o8-ak7" firstAttribute="leading" secondItem="3wS-EV-szE" secondAttribute="trailing" constant="8" symbolic="YES" id="65p-Cg-ws9"/>
-                            <constraint firstItem="3wS-EV-szE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="33" id="LAs-ti-Vgo"/>
                             <constraint firstItem="Q0f-qI-BNl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="13" id="RUP-zZ-FHA"/>
-                            <constraint firstItem="3wS-EV-szE" firstAttribute="baseline" secondItem="npH-o8-ak7" secondAttribute="firstBaseline" id="WWN-32-ipa"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3wS-EV-szE" secondAttribute="bottom" constant="14" id="pYK-Ya-lvs"/>
+                            <constraint firstItem="J9V-ce-C7c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UaF-se-bmj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="J9V-ce-C7c" secondAttribute="bottom" constant="11" id="dB5-3F-yu9"/>
                             <constraint firstItem="Q0f-qI-BNl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pzo-5W-p7u"/>
                             <constraint firstItem="Q0f-qI-BNl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uhc-pt-k1Z"/>
-                            <constraint firstItem="3wS-EV-szE" firstAttribute="top" secondItem="npH-o8-ak7" secondAttribute="top" id="wA7-NF-WWO"/>
+                            <constraint firstItem="J9V-ce-C7c" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="vqP-TW-kW0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -197,7 +233,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add" width="128" height="128"/>
+        <image name="allTabs" width="128" height="128"/>
+        <image name="back" width="128" height="128"/>
         <image name="close" width="128" height="128"/>
+        <image name="forward" width="128" height="128"/>
+        <image name="home" width="128" height="128"/>
+        <image name="refersh" width="128" height="128"/>
         <image name="setting" width="128" height="128"/>
     </resources>
 </document>

@@ -88,7 +88,8 @@ extension TabCarouselViewController : UICollectionViewDataSource , UICollectionV
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("asfadsfsdaf")
+        TabCarouselVCDelegate?.TabCarouselVC!(self, selectedTabIndex: indexPath.row)
+        dismiss(animated: true, completion: nil)
     }
 
 }
@@ -98,7 +99,7 @@ extension TabCarouselViewController : UICollectionViewDataSource , UICollectionV
 @objc
 protocol TabCarouselVCDelegate {
     @objc optional  func TabCarouselVC(_ TabCarouselVC: TabCarouselViewController, closeTabWebView webView : BrowserTab)
-    @objc optional  func TabCarouselVC(openNewTabWebview TabCarouselVC: TabCarouselViewController)
+    @objc optional  func TabCarouselVC(_ TabCarouselVC: TabCarouselViewController , selectedTabIndex : Int)
 }
 
 
