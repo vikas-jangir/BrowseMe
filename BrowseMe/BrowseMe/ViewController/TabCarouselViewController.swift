@@ -49,6 +49,10 @@ class TabCarouselViewController: UIViewController , TabCarouselCollectionViewCel
     
     
     @IBAction func closeVC(_ sender: Any) {
+        dismissVC()
+    }
+    
+    func dismissVC() {
         dismiss(animated: true, completion: nil)
     }
     
@@ -89,7 +93,7 @@ extension TabCarouselViewController : UICollectionViewDataSource , UICollectionV
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         TabCarouselVCDelegate?.TabCarouselVC!(self, selectedTabIndex: indexPath.row)
-        dismiss(animated: true, completion: nil)
+        dismissVC()
     }
 
 }
