@@ -69,57 +69,63 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J9V-ce-C7c">
                                 <rect key="frame" x="0.0" y="802" width="414" height="49"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZe-98-Ju6">
-                                        <rect key="frame" x="65" y="4" width="42" height="42"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="for" image="forward"/>
-                                        <connections>
-                                            <action selector="forwardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9b0-PQ-CYu"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIa-P2-jiX">
-                                        <rect key="frame" x="119" y="4" width="40" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Refresh" image="refersh"/>
-                                        <connections>
-                                            <action selector="refreshButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9WE-Qc-jdN"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sfr-Nu-Lvt">
-                                        <rect key="frame" x="223" y="4" width="40" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Home" image="home"/>
-                                        <connections>
-                                            <action selector="homeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TcO-WJ-kjl"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lh8-cV-Zo7">
-                                        <rect key="frame" x="347" y="4" width="40" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Home" image="add"/>
-                                        <connections>
-                                            <action selector="newTab:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NAT-DR-Mfz"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXq-NP-RT6">
-                                        <rect key="frame" x="17" y="4" width="42" height="42"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="back" image="back"/>
-                                        <connections>
-                                            <action selector="backWardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wmW-wZ-Tld"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wS-EV-szE">
-                                        <rect key="frame" x="284" y="4" width="40" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="ALL Tabs" image="allTabs"/>
-                                        <connections>
-                                            <action selector="allTabs:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e0Z-X7-PaP"/>
-                                            <segue destination="RFU-Lc-fmu" kind="presentation" id="lK2-zH-5MF"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="njc-tK-6Ki">
+                                        <rect key="frame" x="8" y="8" width="398" height="35"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXq-NP-RT6">
+                                                <rect key="frame" x="0.0" y="0.0" width="37" height="35"/>
+                                                <state key="normal" title="back" image="back"/>
+                                                <connections>
+                                                    <action selector="backWardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wmW-wZ-Tld"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZe-98-Ju6">
+                                                <rect key="frame" x="72" y="0.0" width="37.5" height="35"/>
+                                                <state key="normal" title="for" image="forward"/>
+                                                <connections>
+                                                    <action selector="forwardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9b0-PQ-CYu"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIa-P2-jiX">
+                                                <rect key="frame" x="144.5" y="0.0" width="37" height="35"/>
+                                                <state key="normal" title="Refresh" image="refersh"/>
+                                                <connections>
+                                                    <action selector="refreshButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9WE-Qc-jdN"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sfr-Nu-Lvt">
+                                                <rect key="frame" x="216.5" y="0.0" width="37" height="35"/>
+                                                <state key="normal" title="Home" image="home"/>
+                                                <connections>
+                                                    <action selector="homeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TcO-WJ-kjl"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wS-EV-szE">
+                                                <rect key="frame" x="288.5" y="0.0" width="37.5" height="35"/>
+                                                <state key="normal" title="ALL Tabs" image="allTabs"/>
+                                                <connections>
+                                                    <action selector="allTabs:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e0Z-X7-PaP"/>
+                                                    <segue destination="RFU-Lc-fmu" kind="presentation" id="lK2-zH-5MF"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lh8-cV-Zo7">
+                                                <rect key="frame" x="361" y="0.0" width="37" height="35"/>
+                                                <state key="normal" title="Home" image="add"/>
+                                                <connections>
+                                                    <action selector="newTab:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NAT-DR-Mfz"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="Jy4-0o-r3l"/>
+                                    <constraint firstAttribute="trailing" secondItem="njc-tK-6Ki" secondAttribute="trailing" constant="8" id="KQo-4k-YOW"/>
+                                    <constraint firstAttribute="bottom" secondItem="njc-tK-6Ki" secondAttribute="bottom" constant="6" id="SMp-uc-gGA"/>
+                                    <constraint firstItem="njc-tK-6Ki" firstAttribute="top" secondItem="J9V-ce-C7c" secondAttribute="top" constant="8" id="iQH-dv-FTb"/>
+                                    <constraint firstItem="njc-tK-6Ki" firstAttribute="leading" secondItem="J9V-ce-C7c" secondAttribute="leading" constant="8" id="wqV-9q-fMh"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cyV-tj-XfT">
                                 <rect key="frame" x="0.0" y="107" width="414" height="695"/>
@@ -128,17 +134,16 @@
                         </subviews>
                         <color key="backgroundColor" red="0.95178712966844248" green="1" blue="0.99339466784003094" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="J9V-ce-C7c" secondAttribute="bottom" constant="11" id="Gys-jQ-bIy"/>
-                            <constraint firstItem="J9V-ce-C7c" firstAttribute="top" secondItem="cyV-tj-XfT" secondAttribute="bottom" id="HZ4-YW-GBg"/>
                             <constraint firstItem="cyV-tj-XfT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MCh-1z-RP3"/>
                             <constraint firstItem="cyV-tj-XfT" firstAttribute="top" secondItem="Q0f-qI-BNl" secondAttribute="bottom" id="OMV-C4-PrG"/>
+                            <constraint firstItem="J9V-ce-C7c" firstAttribute="top" secondItem="cyV-tj-XfT" secondAttribute="bottom" id="PeX-Qt-vK6"/>
                             <constraint firstItem="Q0f-qI-BNl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="13" id="RUP-zZ-FHA"/>
-                            <constraint firstItem="J9V-ce-C7c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Una-Kz-cxd"/>
-                            <constraint firstItem="J9V-ce-C7c" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="802" id="lLG-ZU-Pt2"/>
+                            <constraint firstItem="J9V-ce-C7c" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="c6S-j5-4C9"/>
                             <constraint firstItem="Q0f-qI-BNl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pzo-5W-p7u"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="J9V-ce-C7c" secondAttribute="bottom" constant="11" id="qtD-Mt-9xX"/>
                             <constraint firstItem="Q0f-qI-BNl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uhc-pt-k1Z"/>
-                            <constraint firstItem="J9V-ce-C7c" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="xSe-rn-PB0"/>
                             <constraint firstItem="cyV-tj-XfT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ymp-8b-iCh"/>
+                            <constraint firstItem="J9V-ce-C7c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zuP-1G-A2N"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
