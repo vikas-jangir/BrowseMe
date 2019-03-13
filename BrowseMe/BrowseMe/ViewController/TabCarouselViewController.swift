@@ -11,14 +11,27 @@ import UIKit
 class TabCarouselViewController: UIViewController , TabCarouselCollectionViewCellDelegate{
 
     var tabManger = TabManager()
-    let cellScaling : CGFloat = 0.6
+    let cellScaling : CGFloat = 0.5
+    
     var TabCarouselVCDelegate: TabCarouselVCDelegate?
+    
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var tabCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpViewController()
+        
+        let screenSize = UIScreen.main.bounds.size
+        let cellWidth = floor(screenSize.width * cellScaling)
+        let cellHeight = floor(screenSize.height * cellScaling)
+        
+        let insetX = (view.bounds.width - cellWidth) / 3.0
+        let insetY = (view.bounds.height - cellHeight) / 2.0
+        
+//        let layout = tabCollectionView!.collectionViewLayout as! UICollectionViewFlowLayout
+//        layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
+        tabCollectionView?.contentInset = UIEdgeInsets(top: insetY, left: insetX, bottom: insetY, right: insetX)
         
         tabCollectionView?.dataSource = self
         
@@ -33,7 +46,7 @@ class TabCarouselViewController: UIViewController , TabCarouselCollectionViewCel
     }
     
     func blurEffect() {
-        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.prominent)
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.extraLight)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]

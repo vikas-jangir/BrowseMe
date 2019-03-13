@@ -167,11 +167,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" dataMode="prototypes" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="31H-C7-b8p">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" dataMode="prototypes" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="31H-C7-b8p">
                                 <rect key="frame" x="0.0" y="180" width="414" height="570"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xVp-Jo-DjM">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="20" minimumInteritemSpacing="20" id="xVp-Jo-DjM">
                                     <size key="itemSize" width="274" height="524"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -207,7 +206,7 @@
                                                 </button>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="tabImage" destination="ddI-fb-c6z" id="gEc-zC-3f7"/>
                                             <outlet property="tabTitial" destination="VBs-ZI-n2c" id="szT-Wd-0y8"/>
@@ -219,12 +218,14 @@
                                     <outlet property="delegate" destination="RFU-Lc-fmu" id="RYS-MJ-fuL"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgq-k0-Ibl">
-                                <rect key="frame" x="357" y="93" width="30" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgq-k0-Ibl">
+                                <rect key="frame" x="359" y="81" width="35" height="35"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
-                                <state key="normal" title="X">
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="kgq-k0-Ibl" secondAttribute="height" multiplier="1:1" id="Pon-J8-z8M"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="X" image="closeBtn">
                                     <color key="titleColor" red="1" green="0.40117527679999998" blue="0.47461617750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -233,6 +234,15 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FVM-aT-Opt" firstAttribute="bottom" secondItem="31H-C7-b8p" secondAttribute="bottom" constant="112" id="2HO-p6-EzF"/>
+                            <constraint firstItem="31H-C7-b8p" firstAttribute="trailing" secondItem="FVM-aT-Opt" secondAttribute="trailing" id="8l8-DN-iV6"/>
+                            <constraint firstItem="31H-C7-b8p" firstAttribute="leading" secondItem="FVM-aT-Opt" secondAttribute="leading" id="HXy-it-mb5"/>
+                            <constraint firstItem="kgq-k0-Ibl" firstAttribute="leading" secondItem="FVM-aT-Opt" secondAttribute="leading" constant="359" id="Poi-gc-YpV"/>
+                            <constraint firstItem="31H-C7-b8p" firstAttribute="top" secondItem="kgq-k0-Ibl" secondAttribute="bottom" constant="64" id="kQc-SM-MlZ"/>
+                            <constraint firstItem="kgq-k0-Ibl" firstAttribute="top" secondItem="FVM-aT-Opt" secondAttribute="top" constant="37" id="kZt-Iw-Lgt"/>
+                            <constraint firstItem="FVM-aT-Opt" firstAttribute="trailing" secondItem="kgq-k0-Ibl" secondAttribute="trailing" constant="20" id="qEe-Mb-qt1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="FVM-aT-Opt"/>
                     </view>
                     <connections>
@@ -249,6 +259,7 @@
         <image name="allTabs" width="128" height="128"/>
         <image name="back" width="128" height="128"/>
         <image name="close" width="128" height="128"/>
+        <image name="closeBtn" width="128" height="128"/>
         <image name="forward" width="128" height="128"/>
         <image name="home" width="128" height="128"/>
         <image name="refersh" width="128" height="128"/>
