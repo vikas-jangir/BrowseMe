@@ -21,14 +21,14 @@ class TabCarouselCollectionViewCell: UICollectionViewCell {
         didSet{
             if self.isSelected
             {
-              //  TabCarouselCollectionViewCellDelegate?.CarouselCollectionViewCell!(self, openTabWebview: self)
-//                self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
-//                self.contentView.backgroundColor = UIColor.red
+                //  TabCarouselCollectionViewCellDelegate?.CarouselCollectionViewCell!(self, openTabWebview: self)
+                //                self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+                //                self.contentView.backgroundColor = UIColor.red
             }
             else
             {
-//                self.transform = CGAffineTransform.identity
-//                self.contentView.backgroundColor = UIColor.gray
+                //                self.transform = CGAffineTransform.identity
+                //                self.contentView.backgroundColor = UIColor.gray
             }
         }
     }

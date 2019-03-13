@@ -13,54 +13,46 @@ extension BrowseMeViewController : UITextFieldDelegate {
     
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        searchBarTextField.text = tabManger.selectedTab?.bTabSearchItem == nil ? "" : tabManger.selectedTab?.bTabSearchItem as! String
-     //   self.searchBarAnimation(y_axis: view.safeAreaInsets.top+5)
+        textField.text = tabManger.selectedTab?.bTabSearchItem as String?
         
-         self.hideKeyboardWhenTappedAround()
+        self.hideKeyboardWhenTappedAround()
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-                let searchString = textField.text!
-                if searchString.count > 0 {
-                    let encodedSeachTerm = searchString.replacingOccurrences(of: " ", with: "+")
-                    let webURL = URL(string: "https://duckduckgo.com/?q=\(encodedSeachTerm)&ia=about")
-                    //webViewApp.load(URLRequest(url: webURL!))
-                    //_ = createTabWebView(url: webURL?.absoluteString! as NSString)
-                //    browser.loadWebviewWithURL(url: webURL!)
-                    var urlString = "https://duckduckgo.com/?q=\(encodedSeachTerm)&ia=about"
-                    
-                    
-                    if tabManger.selectedTab != nil {
-                        tabManger.selectedTab?.loadUrlInWebview(url: urlString as NSString)
-                    } else {
-                        _ = createTabWebView(url: urlString as NSString)
-                    }
-                    tabManger.selectedTab?.bTabSearchItem = searchString as NSString
-                    searchBarTextField.text = urlString;
-                }
-
+        let searchString = textField.text!
+        if searchString.count > 0 {
+            let encodedSeachTerm = searchString.replacingOccurrences(of: " ", with: "+")
+            _ = URL(string: "https://duckduckgo.com/?q=\(encodedSeachTerm)&ia=about")
+            //webViewApp.load(URLRequest(url: webURL!))
+            //_ = createTabWebView(url: webURL?.absoluteString! as NSString)
+            //    browser.loadWebviewWithURL(url: webURL!)
+            let urlString = "https://duckduckgo.com/?q=\(encodedSeachTerm)&ia=about"
+            
+            searchMe(urlString: urlString as NSString, searchString: searchString as NSString)
+        }
+        
         
         
         print("textFieldDidEndEditing")
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-         print("textFieldShouldReturn")
+        print("textFieldShouldReturn")
         self.dismissKeyboard()
         return true;
-       
+        
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         print("textFieldShouldEndEditing")
-     //   self.searchBarAnimation(y_axis: view.safeAreaLayoutGuide.layoutFrame.size.height/2)
+        //   self.searchBarAnimation(y_axis: view.safeAreaLayoutGuide.layoutFrame.size.height/2)
         return true;
     }
-   
     
     
     
-// MARK: Healper methods for Views
+    
+    // MARK: Healper methods for Views
     
     func searchBarUI() {
         
@@ -73,7 +65,9 @@ extension BrowseMeViewController : UITextFieldDelegate {
         searchIconView.image = searchIcon
         padding.addSubview(searchIconView)
         searchBarTextField.leftView = padding
-
+        
+        
+        
         searchBarTextField.leftViewMode = UITextField.ViewMode.always
         
         searchBarTextField.layer.cornerRadius = 15.0
@@ -134,7 +128,7 @@ extension BrowseMeViewController : UITextFieldDelegate {
 
 
 
-    // Implement UISearchBarDelegate delegate
+// Implement UISearchBarDelegate delegate
 //    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
 //        searchBar.resignFirstResponder()
 //        let searchString = searchBar.text!
@@ -163,17 +157,17 @@ extension BrowseMeViewController : UITextFieldDelegate {
 //            let webURL = URL(string: "https://duckduckgo.com/?q=\(encodedSeachTerm)&ia=about")
 //            webViewApp.load(URLRequest(url: webURL!))
 //        }
-    
- //   }
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+//   }
+
+
+
+
+
+
+
+
+
 //    // Implement UISearchBarDelegate delegate
 //    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
 //        searchBar.resignFirstResponder()
@@ -190,5 +184,5 @@ extension BrowseMeViewController : UITextFieldDelegate {
 //            print("Error")
 //        }
 //    }
-    
+
 

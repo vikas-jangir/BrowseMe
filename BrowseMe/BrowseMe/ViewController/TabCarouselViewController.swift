@@ -9,7 +9,7 @@
 import UIKit
 
 class TabCarouselViewController: UIViewController , TabCarouselCollectionViewCellDelegate{
-
+    
     var tabManger = TabManager()
     let cellScaling : CGFloat = 0.5
     
@@ -21,28 +21,15 @@ class TabCarouselViewController: UIViewController , TabCarouselCollectionViewCel
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpViewController()
-        
-        let screenSize = UIScreen.main.bounds.size
-        let cellWidth = floor(screenSize.width * cellScaling)
-        let cellHeight = floor(screenSize.height * cellScaling)
-        
-        let insetX = (view.bounds.width - cellWidth) / 3.0
-        let insetY = (view.bounds.height - cellHeight) / 2.0
-        
-//        let layout = tabCollectionView!.collectionViewLayout as! UICollectionViewFlowLayout
-//        layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
-        tabCollectionView?.contentInset = UIEdgeInsets(top: insetY, left: insetX, bottom: insetY, right: insetX)
-        
         tabCollectionView?.dataSource = self
         
-        
-        // Do any additional setup after loading the view.
     }
     
     
     func setUpViewController() {
         blurEffect()
         roundCorner()
+        collectionViewPadding()
     }
     
     func blurEffect() {
@@ -60,6 +47,17 @@ class TabCarouselViewController: UIViewController , TabCarouselCollectionViewCel
         self.tabCollectionView.layer.borderColor = UIColor.clear.cgColor
     }
     
+    func collectionViewPadding(){
+        let screenSize = UIScreen.main.bounds.size
+        let cellWidth = floor(screenSize.width * cellScaling)
+        let cellHeight = floor(screenSize.height * cellScaling)
+        
+        let insetX = (view.bounds.width - cellWidth) / 3.0
+        let insetY = (view.bounds.height - cellHeight) / 2.0
+        
+        tabCollectionView?.contentInset = UIEdgeInsets(top: insetY, left: insetX, bottom: insetY, right: insetX)
+    }
+    
     
     @IBAction func closeVC(_ sender: Any) {
         dismissVC()
@@ -71,20 +69,20 @@ class TabCarouselViewController: UIViewController , TabCarouselCollectionViewCel
     
     // MARK:- CarouselCollectionViewCellDelegate
     func CarouselCollectionViewCell(closeTab CarouselCollectionViewCell: TabCarouselCollectionViewCell) {
-         let indexPath = tabCollectionView.indexPath(for: CarouselCollectionViewCell)?.row
+        let indexPath = tabCollectionView.indexPath(for: CarouselCollectionViewCell)?.row
         TabCarouselVCDelegate?.TabCarouselVC!(self, closeTabWebView: tabManger.tabAtIndex(index: indexPath!)!)
         self.tabCollectionView.reloadData()
     }
     func CarouselCollectionViewCell(openTabWebview CarouselCollectionViewCell: TabCarouselCollectionViewCell) {
         
     }
-
+    
 }
 
 
 
 extension TabCarouselViewController : UICollectionViewDataSource , UICollectionViewDelegate {
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TabCarouselCollectionViewCell", for: indexPath) as! TabCarouselCollectionViewCell
         cell.TabCarouselCollectionViewCellDelegate = (self as TabCarouselCollectionViewCellDelegate)
@@ -101,14 +99,14 @@ extension TabCarouselViewController : UICollectionViewDataSource , UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-     return tabManger.count
+        return tabManger.count
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         TabCarouselVCDelegate?.TabCarouselVC!(self, selectedTabIndex: indexPath.row)
         dismissVC()
     }
-
+    
 }
 
 
@@ -118,10 +116,3 @@ protocol TabCarouselVCDelegate {
     @objc optional  func TabCarouselVC(_ TabCarouselVC: TabCarouselViewController, closeTabWebView webView : BrowserTab)
     @objc optional  func TabCarouselVC(_ TabCarouselVC: TabCarouselViewController , selectedTabIndex : Int)
 }
-
-
-//- (IBAction)actionAddToCart:(id)sender {
-//    NSIndexPath *indexPath;
-//    indexPath = [self.collectionView indexPathForItemAtPoint:[self.collectionView convertPoint:sender.center fromView:sender.superview]];
-//    ...
-//}

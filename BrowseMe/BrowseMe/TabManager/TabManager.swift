@@ -11,9 +11,7 @@ import UIKit
 
 class TabManager: NSObject {
     static var allTabs : [BrowserTab] = []
-   private(set) var selectedIndex : Int = -1
-    
-   
+    private(set) var selectedIndex : Int = -1
     
     
     func createTab(url : NSString) {
@@ -33,7 +31,7 @@ class TabManager: NSObject {
     func removeWebViewFromVC(view : UIView) {
         if selectedIndex != -1 {
             TabManager.allTabs[selectedIndex].bTabWebView.removeFromSuperview()
-//            view.willRemoveSubview(TabManager.tabs[selectedTab].bTabWebView)
+            //            view.willRemoveSubview(TabManager.tabs[selectedTab].bTabWebView)
         }
     }
     
@@ -55,11 +53,11 @@ class TabManager: NSObject {
     
     func tabAtIndex(index : Int) -> BrowserTab? {
         if index < count {
-             return TabManager.allTabs[index]
+            return TabManager.allTabs[index]
         } else {
             return nil;
         }
-       
+        
     }
     
     func removeTab(browserTab : BrowserTab) {

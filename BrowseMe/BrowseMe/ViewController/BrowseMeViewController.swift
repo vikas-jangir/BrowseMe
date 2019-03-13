@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 
 class BrowseMeViewController: UIViewController , TabCarouselVCDelegate  {
-
+    
     
     @IBOutlet weak var searchBarTextField: UITextField!
     @IBOutlet weak var numberOfTabs: UILabel!
@@ -22,11 +22,11 @@ class BrowseMeViewController: UIViewController , TabCarouselVCDelegate  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       setUpVC()
+        setUpVC()
         // Do any additional setup after loading the view, typically from a nib.
         
     }
-
+    
     @IBAction func newTab(_ sender: Any) {
         createTabWebView(url: "https://duckduckgo.com/")
         searchBarTextField.text = ""
@@ -54,7 +54,7 @@ class BrowseMeViewController: UIViewController , TabCarouselVCDelegate  {
     }
     
     @IBAction func homeButton(_ sender: Any) {
-        tabManger.selectedTab?.loadUrlInWebview(url: "https://duckduckgo.com/")
+        searchMe(urlString: "https://duckduckgo.com/", searchString: "https://duckduckgo.com/")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -71,6 +71,16 @@ class BrowseMeViewController: UIViewController , TabCarouselVCDelegate  {
         updateNumberOfTabsLabel()
     }
     
+    func searchMe(urlString : NSString , searchString : NSString) {
+        if tabManger.selectedTab != nil {
+            tabManger.selectedTab?.loadUrlInWebview(url: urlString as NSString)
+        } else {
+            _ = createTabWebView(url: urlString as NSString)
+        }
+        tabManger.selectedTab?.bTabSearchItem = searchString as NSString
+        searchBarTextField.text = urlString as String;
+    }
+    
     // MARK:- impliment TabCarouselVCDelegate
     
     func TabCarouselVC(_ TabCarouselVC: TabCarouselViewController, closeTabWebView webView: BrowserTab) {
@@ -84,7 +94,7 @@ class BrowseMeViewController: UIViewController , TabCarouselVCDelegate  {
     // MARK:- SetUpVC
     func setUpVC() {
         
-         searchBarCustomization()
+        searchBarCustomization()
     }
     
     func updateNumberOfTabsLabel() {
