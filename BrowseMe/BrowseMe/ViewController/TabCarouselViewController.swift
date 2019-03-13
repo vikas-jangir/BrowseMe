@@ -18,6 +18,7 @@ class TabCarouselViewController: UIViewController , TabCarouselCollectionViewCel
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var tabCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpViewController()

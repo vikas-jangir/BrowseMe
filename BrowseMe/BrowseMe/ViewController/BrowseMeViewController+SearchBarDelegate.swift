@@ -12,13 +12,20 @@ import UIKit
 extension BrowseMeViewController : UITextFieldDelegate {
     
     
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
+       
+        expendSearchBar()
+        
         textField.text = tabManger.selectedTab?.bTabSearchItem as String?
         
         self.hideKeyboardWhenTappedAround()
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        collapseSearchBar()
+        
         let searchString = textField.text!
         if searchString.count > 0 {
             let encodedSeachTerm = searchString.replacingOccurrences(of: " ", with: "+")
@@ -65,9 +72,7 @@ extension BrowseMeViewController : UITextFieldDelegate {
         searchIconView.image = searchIcon
         padding.addSubview(searchIconView)
         searchBarTextField.leftView = padding
-        
-        
-        
+    
         searchBarTextField.leftViewMode = UITextField.ViewMode.always
         
         searchBarTextField.layer.cornerRadius = 15.0
@@ -75,10 +80,10 @@ extension BrowseMeViewController : UITextFieldDelegate {
         searchBarTextField.layer.borderColor = UIColor.gray.cgColor
     }
     
-    func searchBarAnimation(y_axis : CGFloat) {
+    func searchBarAnimation(width : CGFloat) {
         UIView.animate(withDuration: 0.5, animations: {
             () -> Void in
-            self.searchBarTextField.frame.origin.y = CGFloat(y_axis)
+            self.searchBarTextField.frame.size.width = CGFloat(width)
         }, completion: nil)
     }
     
@@ -92,6 +97,18 @@ extension BrowseMeViewController : UITextFieldDelegate {
         view.endEditing(true)
     }
     
+    func expendSearchBar() {
+        widthOfSearchBar = searchBarTextField.frame.size.width
+        numberOfTabs.isHidden = true
+        settingBtn.isHidden = true
+        searchBarAnimation(width: self.barView.frame.size.width-15)
+    }
+    
+    func collapseSearchBar() {
+        numberOfTabs.isHidden = false
+        settingBtn.isHidden = false
+        searchBarAnimation(width: widthOfSearchBar)
+    }
     
 }
 

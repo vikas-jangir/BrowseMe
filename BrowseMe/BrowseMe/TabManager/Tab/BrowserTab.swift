@@ -27,12 +27,16 @@ class BrowserTab: NSObject {
     
     func createWebviewWithUrl(url : NSString) {
         bTabWebViewUrl = URL(string: url as String)
+        
         let webConfiguration = WKWebViewConfiguration()
+        webConfiguration.allowsInlineMediaPlayback = true
+        webConfiguration.allowsPictureInPictureMediaPlayback = true
+        
         bTabWebView = WKWebView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), configuration: webConfiguration)
         bTabWebView.navigationDelegate = self
         
         bTabWebView.allowsBackForwardNavigationGestures = true
-        
+
         bTabWebView.load(URLRequest(url: bTabWebViewUrl!))
         
     }

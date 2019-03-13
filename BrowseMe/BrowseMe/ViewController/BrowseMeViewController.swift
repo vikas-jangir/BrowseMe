@@ -16,8 +16,10 @@ class BrowseMeViewController: UIViewController , TabCarouselVCDelegate  {
     @IBOutlet weak var numberOfTabs: UILabel!
     @IBOutlet weak var barView: UIView!
     @IBOutlet weak var webViewBrowseVC: UIView!
+    @IBOutlet weak var settingBtn: UIButton!
     
     var tabManger = TabManager()
+    var widthOfSearchBar : CGFloat = 0.0
     
     
     override func viewDidLoad() {

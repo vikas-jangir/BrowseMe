@@ -151,6 +151,7 @@
                         <outlet property="barView" destination="Q0f-qI-BNl" id="aKD-ob-Ibj"/>
                         <outlet property="numberOfTabs" destination="oNQ-SH-U0w" id="LGD-4c-kTr"/>
                         <outlet property="searchBarTextField" destination="Urm-hl-upM" id="qbL-7v-rgJ"/>
+                        <outlet property="settingBtn" destination="7yk-oO-YR7" id="Bcd-cu-bCB"/>
                         <outlet property="webViewBrowseVC" destination="cyV-tj-XfT" id="DSg-Lx-reK"/>
                     </connections>
                 </viewController>
