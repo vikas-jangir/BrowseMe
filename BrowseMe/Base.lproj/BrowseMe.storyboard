@@ -48,6 +48,7 @@
                                         <state key="normal" title="s" image="setting"/>
                                         <connections>
                                             <action selector="settingButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Dk-kc-Hd6"/>
+                                            <segue destination="TbM-Ug-na3" kind="presentation" modalPresentationStyle="overCurrentContext" id="QiX-nq-teS"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -160,6 +161,47 @@
             </objects>
             <point key="canvasLocation" x="53.623188405797109" y="27.455357142857142"/>
         </scene>
+        <!--Setting View Controller-->
+        <scene sceneID="TIU-aO-h0e">
+            <objects>
+                <viewController providesPresentationContextTransitionStyle="YES" id="TbM-Ug-na3" customClass="settingViewController" customModule="BrowseMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="3Mo-fY-iLH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Az-fp-ff1">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1fO-gO-dDe">
+                                <rect key="frame" x="159" y="69" width="230" height="412"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="412" id="NEs-qS-3Kf"/>
+                                    <constraint firstAttribute="width" constant="230" id="qiP-Bb-7aW"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="3Az-fp-ff1" secondAttribute="bottom" id="3Uc-kd-IiI"/>
+                            <constraint firstItem="3Az-fp-ff1" firstAttribute="top" secondItem="3Mo-fY-iLH" secondAttribute="top" id="Won-tr-aEO"/>
+                            <constraint firstItem="1fO-gO-dDe" firstAttribute="top" secondItem="WJ7-eN-w6E" secondAttribute="top" constant="25" id="cHl-1g-vf5"/>
+                            <constraint firstItem="3Az-fp-ff1" firstAttribute="leading" secondItem="WJ7-eN-w6E" secondAttribute="leading" id="ck9-US-ESe"/>
+                            <constraint firstItem="WJ7-eN-w6E" firstAttribute="trailing" secondItem="1fO-gO-dDe" secondAttribute="trailing" constant="25" id="jfT-sE-U0J"/>
+                            <constraint firstItem="3Az-fp-ff1" firstAttribute="trailing" secondItem="WJ7-eN-w6E" secondAttribute="trailing" id="ob8-AP-xsM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WJ7-eN-w6E"/>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="3Az-fp-ff1" id="649-aX-7WB"/>
+                        <outlet property="settingView" destination="1fO-gO-dDe" id="c5j-vl-mIV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ltq-tS-cbo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1092.753623188406" y="-272.54464285714283"/>
+        </scene>
         <!--Tab Carousel View Controller-->
         <scene sceneID="Uq2-Xn-vbS">
             <objects>
@@ -267,7 +309,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dTy-Oh-GJw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1111.5942028985507" y="28.794642857142854"/>
+            <point key="canvasLocation" x="1116" y="376"/>
         </scene>
     </scenes>
     <resources>

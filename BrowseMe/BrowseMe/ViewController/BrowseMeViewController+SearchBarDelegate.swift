@@ -19,7 +19,7 @@ extension BrowseMeViewController : UITextFieldDelegate {
         
         textField.text = tabManger.selectedTab?.bTabSearchItem as String?
         
-        self.hideKeyboardWhenTappedAround()
+        hideKeyboardWhenTappedAround()
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {

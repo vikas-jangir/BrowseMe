@@ -19,6 +19,7 @@
 		048EE33C2210457E00F8D9AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 048EE33B2210457E00F8D9AE /* Assets.xcassets */; };
 		048EE33F2210457E00F8D9AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048EE33D2210457E00F8D9AE /* LaunchScreen.storyboard */; };
 		04ADBDB52212BEA60082BF02 /* BrowseMeViewController+SearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ADBDB42212BEA60082BF02 /* BrowseMeViewController+SearchBarDelegate.swift */; };
+		04EDA870223A771400DA3863 /* settingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EDA86F223A771400DA3863 /* settingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		048EE3402210457E00F8D9AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04ADBDB22212BE4C0082BF02 /* BrowserTab+WebViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserTab+WebViewDelegate.swift"; sourceTree = "<group>"; };
 		04ADBDB42212BEA60082BF02 /* BrowseMeViewController+SearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowseMeViewController+SearchBarDelegate.swift"; sourceTree = "<group>"; };
+		04EDA86F223A771400DA3863 /* settingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				04ADBDB42212BEA60082BF02 /* BrowseMeViewController+SearchBarDelegate.swift */,
 				042D2EBD2231256500B91DF6 /* TabCarouselViewController.swift */,
 				042D2EBF22312B1B00B91DF6 /* TabCarouselCollectionViewCell.swift */,
+				04EDA86F223A771400DA3863 /* settingViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				042D2EBC222FD60000B91DF6 /* TabManager.swift in Sources */,
 				048EE3342210457D00F8D9AE /* BrowseMeViewController.swift in Sources */,
 				048EE3322210457D00F8D9AE /* AppDelegate.swift in Sources */,
+				04EDA870223A771400DA3863 /* settingViewController.swift in Sources */,
 				042D2EBE2231256500B91DF6 /* TabCarouselViewController.swift in Sources */,
 				042D2EB3222D233500B91DF6 /* BrowserTab.swift in Sources */,
 			);

@@ -19,6 +19,7 @@ class BrowserTab: NSObject {
     var snapShotImage : UIImage?
     var error : NSError?
     
+    
     init(url : NSString) {
         super.init()
         createWebviewWithUrl(url: url)
@@ -38,7 +39,7 @@ class BrowserTab: NSObject {
         bTabWebView.allowsBackForwardNavigationGestures = true
 
         bTabWebView.load(URLRequest(url: bTabWebViewUrl!))
-        
+
     }
     
     func loadUrlInWebview(url : NSString ) {
