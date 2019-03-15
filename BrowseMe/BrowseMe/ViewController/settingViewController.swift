@@ -25,7 +25,7 @@ class settingViewController: UIViewController {
         settingView.layer.cornerRadius = 20.0
         settingView.layer.masksToBounds = true
         settingView.layer.borderWidth = 1.0
-        settingView.layer.borderColor = UIColor.clear.cgColor
+        settingView.layer.borderColor = UIColor.darkGray.cgColor
     }
 
     
