@@ -12,6 +12,7 @@ import WebKit
 class BrowseMeViewController: UIViewController , TabCarouselVCDelegate  {
     
     
+    @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var searchBarTextField: UITextField!
     @IBOutlet weak var numberOfTabs: UILabel!
     @IBOutlet weak var barView: UIView!
@@ -95,8 +96,7 @@ class BrowseMeViewController: UIViewController , TabCarouselVCDelegate  {
     
     // MARK:- SetUpVC
     func setUpVC() {
-        
-        searchBarCustomization()
+        searchBarUI()
     }
     
     func updateNumberOfTabsLabel() {

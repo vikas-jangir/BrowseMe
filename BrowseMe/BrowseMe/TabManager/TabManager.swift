@@ -23,14 +23,17 @@ class TabManager: NSObject {
     func addWebViewIntoVC(view : UIView)  {
         if selectedIndex != -1 {
             removeWebViewFromVC(view: view)
-            TabManager.allTabs[selectedIndex].bTabWebView.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height)
+            TabManager.allTabs[selectedIndex].progressBar.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: 2)
+            TabManager.allTabs[selectedIndex].bTabWebView.frame = CGRect(x: 0, y: 2, width: view.frame.size.width, height: view.frame.size.height)
             view.addSubview(TabManager.allTabs[selectedIndex].bTabWebView)
+            view.addSubview(TabManager.allTabs[selectedIndex].progressBar)
         }
     }
     
     func removeWebViewFromVC(view : UIView) {
         if selectedIndex != -1 {
             TabManager.allTabs[selectedIndex].bTabWebView.removeFromSuperview()
+            TabManager.allTabs[selectedIndex].progressBar.removeFromSuperview()
             //            view.willRemoveSubview(TabManager.tabs[selectedTab].bTabWebView)
         }
     }
@@ -66,6 +69,7 @@ class TabManager: NSObject {
         for i in 0..<copy.count {
             if copy[i] == browserTab {
                 TabManager.allTabs[i].bTabWebView.removeFromSuperview()
+                TabManager.allTabs[i].progressBar.removeFromSuperview()
                 TabManager.allTabs.remove(at: i)
             }
         }

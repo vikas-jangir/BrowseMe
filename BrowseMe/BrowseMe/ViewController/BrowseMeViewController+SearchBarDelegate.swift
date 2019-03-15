@@ -62,7 +62,14 @@ extension BrowseMeViewController : UITextFieldDelegate {
     // MARK: Healper methods for Views
     
     func searchBarUI() {
-        
+        searchBarCustomization()
+        numberOfTabsUICustomization()
+    }
+    
+    func numberOfTabsUICustomization()  {
+        numberOfTabs.layer.borderWidth = 2.0
+        numberOfTabs.layer.cornerRadius = 10
+        numberOfTabs.layer.borderColor = UIColor.black.cgColor
     }
     
     func searchBarCustomization() {

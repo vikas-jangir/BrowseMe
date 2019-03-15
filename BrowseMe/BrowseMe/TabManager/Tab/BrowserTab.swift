@@ -19,6 +19,9 @@ class BrowserTab: NSObject {
     var snapShotImage : UIImage?
     var error : NSError?
     
+    let progressBar = UIProgressView()
+    var theBool : Bool = false
+    var myTimer : Timer = Timer()
     
     init(url : NSString) {
         super.init()
@@ -27,6 +30,8 @@ class BrowserTab: NSObject {
     
     
     func createWebviewWithUrl(url : NSString) {
+        progressBar.progressViewStyle = UIProgressView.Style.bar
+        
         bTabWebViewUrl = URL(string: url as String)
         
         let webConfiguration = WKWebViewConfiguration()
