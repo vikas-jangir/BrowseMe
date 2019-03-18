@@ -12,8 +12,9 @@
 		042D2EBC222FD60000B91DF6 /* TabManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D2EBB222FD60000B91DF6 /* TabManager.swift */; };
 		042D2EBE2231256500B91DF6 /* TabCarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D2EBD2231256500B91DF6 /* TabCarouselViewController.swift */; };
 		042D2EC022312B1B00B91DF6 /* TabCarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D2EBF22312B1B00B91DF6 /* TabCarouselCollectionViewCell.swift */; };
+		0438C4E8223FADE800B4FB83 /* adblock-list.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0438C4E7223FADE800B4FB83 /* adblock-list.txt */; };
 		046B691F223BA3A100BAAB69 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B691E223BA3A100BAAB69 /* DataController.swift */; };
-		046B6921223BB49F00BAAB69 /* TabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B6920223BB49F00BAAB69 /* TabModel.swift */; };
+		046B6921223BB49F00BAAB69 /* TabCoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B6920223BB49F00BAAB69 /* TabCoreDataModel.swift */; };
 		048EE3322210457D00F8D9AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048EE3312210457D00F8D9AE /* AppDelegate.swift */; };
 		048EE3342210457D00F8D9AE /* BrowseMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048EE3332210457D00F8D9AE /* BrowseMeViewController.swift */; };
 		048EE3372210457D00F8D9AE /* BrowseMe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048EE3352210457D00F8D9AE /* BrowseMe.storyboard */; };
@@ -29,8 +30,9 @@
 		042D2EBB222FD60000B91DF6 /* TabManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabManager.swift; sourceTree = "<group>"; };
 		042D2EBD2231256500B91DF6 /* TabCarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCarouselViewController.swift; sourceTree = "<group>"; };
 		042D2EBF22312B1B00B91DF6 /* TabCarouselCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCarouselCollectionViewCell.swift; sourceTree = "<group>"; };
+		0438C4E7223FADE800B4FB83 /* adblock-list.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "adblock-list.txt"; sourceTree = "<group>"; };
 		046B691E223BA3A100BAAB69 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
-		046B6920223BB49F00BAAB69 /* TabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabModel.swift; sourceTree = "<group>"; };
+		046B6920223BB49F00BAAB69 /* TabCoreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoreDataModel.swift; sourceTree = "<group>"; };
 		048EE32E2210457D00F8D9AE /* BrowseMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrowseMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		048EE3312210457D00F8D9AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		048EE3332210457D00F8D9AE /* BrowseMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseMeViewController.swift; sourceTree = "<group>"; };
@@ -73,12 +75,20 @@
 			path = TabManager;
 			sourceTree = "<group>";
 		};
+		0438C4E6223FADE800B4FB83 /* AdBlocking */ = {
+			isa = PBXGroup;
+			children = (
+				0438C4E7223FADE800B4FB83 /* adblock-list.txt */,
+			);
+			path = AdBlocking;
+			sourceTree = "<group>";
+		};
 		046B691D223BA0AB00BAAB69 /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				048EE3382210457D00F8D9AE /* BrowseMe.xcdatamodeld */,
 				046B691E223BA3A100BAAB69 /* DataController.swift */,
-				046B6920223BB49F00BAAB69 /* TabModel.swift */,
+				046B6920223BB49F00BAAB69 /* TabCoreDataModel.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -127,6 +137,7 @@
 		04ADBDB12212BD250082BF02 /* BrowseMe */ = {
 			isa = PBXGroup;
 			children = (
+				0438C4E6223FADE800B4FB83 /* AdBlocking */,
 				046B691D223BA0AB00BAAB69 /* Data */,
 				0485B36F22322D9100F50C72 /* ViewController */,
 				042D2EB8222FCB8F00B91DF6 /* TabManager */,
@@ -195,6 +206,7 @@
 				048EE33F2210457E00F8D9AE /* LaunchScreen.storyboard in Resources */,
 				048EE33C2210457E00F8D9AE /* Assets.xcassets in Resources */,
 				048EE3372210457D00F8D9AE /* BrowseMe.storyboard in Resources */,
+				0438C4E8223FADE800B4FB83 /* adblock-list.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,7 +226,7 @@
 				048EE3342210457D00F8D9AE /* BrowseMeViewController.swift in Sources */,
 				048EE3322210457D00F8D9AE /* AppDelegate.swift in Sources */,
 				04EDA870223A771400DA3863 /* settingViewController.swift in Sources */,
-				046B6921223BB49F00BAAB69 /* TabModel.swift in Sources */,
+				046B6921223BB49F00BAAB69 /* TabCoreDataModel.swift in Sources */,
 				042D2EBE2231256500B91DF6 /* TabCarouselViewController.swift in Sources */,
 				042D2EB3222D233500B91DF6 /* BrowserTab.swift in Sources */,
 			);

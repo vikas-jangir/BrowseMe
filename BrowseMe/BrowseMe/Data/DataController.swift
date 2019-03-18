@@ -17,7 +17,7 @@ public class DataController: NSObject {
     
     private var container : NSPersistentContainer {
         let modelName = "BrowseMe"
-        guard let modelUrl = Bundle(for: DataController.self).url(forResource: modelName, withExtension: "xcdatamodeld") else {
+        guard let modelUrl = Bundle(for: DataController.self).url(forResource: modelName, withExtension: "momd") else {
             fatalError("Error loading model from bundle")
         }
         

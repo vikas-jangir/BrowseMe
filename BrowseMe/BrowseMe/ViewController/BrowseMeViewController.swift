@@ -22,10 +22,10 @@ class BrowseMeViewController: UIViewController , TabCarouselVCDelegate  {
     var tabManger = TabManager()
     var widthOfSearchBar : CGFloat = 0.0
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpVC()
+      //  TabCoreDataModel.saveBrowseTabToCoreModel()
         // Do any additional setup after loading the view, typically from a nib.
         
     }

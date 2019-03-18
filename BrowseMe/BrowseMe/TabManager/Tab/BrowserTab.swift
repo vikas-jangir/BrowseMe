@@ -30,6 +30,10 @@ class BrowserTab: NSObject {
     
     
     func createWebviewWithUrl(url : NSString) {
+        
+        
+        
+        
         progressBar.progressViewStyle = UIProgressView.Style.bar
         
         bTabWebViewUrl = URL(string: url as String)
