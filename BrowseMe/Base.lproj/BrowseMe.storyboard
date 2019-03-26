@@ -218,29 +218,45 @@
                                             <rect key="frame" x="0.0" y="0.0" width="254" height="468"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dd7-du-xmu">
-                                                    <rect key="frame" x="214" y="65" width="30" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dd7-du-xmu">
+                                                    <rect key="frame" x="216" y="57" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="oI9-7y-7SF"/>
+                                                        <constraint firstAttribute="height" constant="30" id="oVp-YT-k1G"/>
+                                                    </constraints>
                                                     <state key="normal" image="close"/>
                                                     <connections>
                                                         <action selector="tabClose:" destination="Cgw-dV-wli" eventType="touchUpInside" id="mdi-vT-ess"/>
                                                     </connections>
                                                 </button>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ddI-fb-c6z">
-                                                    <rect key="frame" x="0.0" y="103" width="254" height="365"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ddI-fb-c6z">
+                                                    <rect key="frame" x="0.0" y="95" width="254" height="373"/>
                                                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VBs-ZI-n2c">
-                                                    <rect key="frame" x="4" y="65" width="201" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VBs-ZI-n2c">
+                                                    <rect key="frame" x="12" y="57" width="191" height="20.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20.5" id="5hy-xt-cLX"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="ddI-fb-c6z" firstAttribute="leading" secondItem="Cgw-dV-wli" secondAttribute="leading" id="1eQ-tW-xPR"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="Dd7-du-xmu" secondAttribute="trailing" id="9pH-PJ-wbb"/>
+                                            <constraint firstItem="ddI-fb-c6z" firstAttribute="top" secondItem="Dd7-du-xmu" secondAttribute="bottom" constant="8" id="BPc-pO-4ip"/>
+                                            <constraint firstAttribute="bottom" secondItem="ddI-fb-c6z" secondAttribute="bottom" id="GMQ-PB-pwq"/>
+                                            <constraint firstItem="ddI-fb-c6z" firstAttribute="top" secondItem="Dd7-du-xmu" secondAttribute="bottom" constant="8" id="Jul-Yl-Q6b"/>
+                                            <constraint firstItem="VBs-ZI-n2c" firstAttribute="leading" secondItem="Cgw-dV-wli" secondAttribute="leadingMargin" constant="4" id="SS1-Hj-x2w"/>
+                                            <constraint firstAttribute="trailing" secondItem="ddI-fb-c6z" secondAttribute="trailing" id="YJI-I9-N2h"/>
+                                            <constraint firstItem="Dd7-du-xmu" firstAttribute="leading" secondItem="VBs-ZI-n2c" secondAttribute="trailing" constant="13" id="aYu-xd-Qhb"/>
+                                            <constraint firstItem="Dd7-du-xmu" firstAttribute="top" secondItem="Cgw-dV-wli" secondAttribute="topMargin" constant="5" id="bkJ-5I-lGH"/>
+                                            <constraint firstItem="VBs-ZI-n2c" firstAttribute="top" secondItem="Cgw-dV-wli" secondAttribute="topMargin" constant="5" id="kgw-hh-lUO"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="tabImage" destination="ddI-fb-c6z" id="gEc-zC-3f7"/>
                                             <outlet property="tabTitial" destination="VBs-ZI-n2c" id="szT-Wd-0y8"/>
@@ -285,7 +301,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dTy-Oh-GJw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1116" y="375.56221889055473"/>
+            <point key="canvasLocation" x="1115.9420289855072" y="375"/>
         </scene>
     </scenes>
     <resources>
