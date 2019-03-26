@@ -397,7 +397,7 @@
 		048EE3442210457E00F8D9AE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WZMMZ9FP6W;
 				INFOPLIST_FILE = BrowseMe/Info.plist;
@@ -416,7 +416,7 @@
 		048EE3452210457E00F8D9AE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WZMMZ9FP6W;
 				INFOPLIST_FILE = BrowseMe/Info.plist;
