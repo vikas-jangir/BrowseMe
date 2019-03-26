@@ -9,10 +9,10 @@
 import UIKit
 import WebKit
 
-class BrowseMeViewController: UIViewController , TabCarouselVCDelegate  {
+class BrowseMeViewController: UIViewController , TabCarouselVCDelegate {
     
     
-    @IBOutlet weak var progressBar: UIProgressView!
+    
     @IBOutlet weak var searchBarTextField: UITextField!
     @IBOutlet weak var numberOfTabs: UILabel!
     @IBOutlet weak var barView: UIView!
@@ -21,6 +21,13 @@ class BrowseMeViewController: UIViewController , TabCarouselVCDelegate  {
     
     var tabManger = TabManager()
     var widthOfSearchBar : CGFloat = 0.0
+    
+    
+    @IBOutlet weak var progressBar: UIProgressView!
+    var isprogressBarActive : Bool = false
+    var progressBarTimer : Timer = Timer()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +76,7 @@ class BrowseMeViewController: UIViewController , TabCarouselVCDelegate  {
     }
     
     func createTabWebView(url : NSString) {
-        tabManger.createTab(url: url)
+        tabManger.createTab(url: url, browseMeVCDelegate: self)
         tabManger.addWebViewIntoVC(view: self.webViewBrowseVC)
         updateNumberOfTabsLabel()
     }
@@ -106,7 +113,7 @@ class BrowseMeViewController: UIViewController , TabCarouselVCDelegate  {
 }
 
 //@objc
-//protocol BrowseMeVCDelegate {
+//protocol browseMeVCDelegate {
 //    @objc optional  func BrowserVC(_ browserVC: BrowseMeViewController, closeTabWebView webView : BrowserTab)
 //    @objc optional  func BrowserVC(_ browserVC: BrowseMeViewController, openTabWebview webView : BrowserTab)
 //    @objc optional  func BrowserVC(_ browserVC: BrowseMeViewController, urlChangeinWebView webView : BrowserTab)

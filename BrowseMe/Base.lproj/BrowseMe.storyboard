@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q0f-qI-BNl">
-                                <rect key="frame" x="0.0" y="57" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="57" width="414" height="48"/>
                                 <subviews>
                                     <textField clipsSubviews="YES" clearsContextBeforeDrawing="NO" alpha="0.75" contentMode="scaleToFill" semanticContentAttribute="spatial" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="  Search or type web address" textAlignment="justified" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Urm-hl-upM">
-                                        <rect key="frame" x="8" y="4" width="310" height="42"/>
+                                        <rect key="frame" x="8" y="4" width="314" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -32,7 +32,7 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oNQ-SH-U0w">
-                                        <rect key="frame" x="327" y="10" width="30" height="30"/>
+                                        <rect key="frame" x="331" y="10" width="28" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="oNQ-SH-U0w" secondAttribute="height" multiplier="5:5" id="9kT-mc-dKC"/>
                                         </constraints>
@@ -41,7 +41,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yk-oO-YR7">
-                                        <rect key="frame" x="372" y="8" width="34" height="34"/>
+                                        <rect key="frame" x="374" y="8" width="32" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="7yk-oO-YR7" secondAttribute="height" multiplier="1:1" id="UNX-9u-XIc"/>
                                         </constraints>
@@ -60,7 +60,7 @@
                                     <constraint firstItem="oNQ-SH-U0w" firstAttribute="top" secondItem="Q0f-qI-BNl" secondAttribute="top" constant="10" id="Jf0-Nx-JXl"/>
                                     <constraint firstItem="7yk-oO-YR7" firstAttribute="top" secondItem="Q0f-qI-BNl" secondAttribute="top" constant="8" id="X0p-Lw-7Xr"/>
                                     <constraint firstItem="oNQ-SH-U0w" firstAttribute="leading" secondItem="Urm-hl-upM" secondAttribute="trailing" constant="9" id="YbY-m0-K40"/>
-                                    <constraint firstAttribute="height" constant="50" id="cxC-Fy-A9f"/>
+                                    <constraint firstAttribute="height" constant="48" id="cxC-Fy-A9f"/>
                                     <constraint firstAttribute="bottom" secondItem="Urm-hl-upM" secondAttribute="bottom" constant="4" id="fOL-P1-s3Z"/>
                                     <constraint firstItem="7yk-oO-YR7" firstAttribute="leading" secondItem="oNQ-SH-U0w" secondAttribute="trailing" constant="15" id="jIX-sy-Nwu"/>
                                     <constraint firstAttribute="bottom" secondItem="7yk-oO-YR7" secondAttribute="bottom" constant="8" id="joj-1q-1yU"/>
@@ -128,29 +128,36 @@
                                     <constraint firstItem="njc-tK-6Ki" firstAttribute="leading" secondItem="J9V-ce-C7c" secondAttribute="leading" constant="8" id="wqV-9q-fMh"/>
                                 </constraints>
                             </view>
+                            <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sjC-0a-sdq">
+                                <rect key="frame" x="0.0" y="105" width="414" height="2"/>
+                            </progressView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cyV-tj-XfT">
-                                <rect key="frame" x="0.0" y="107" width="414" height="706"/>
+                                <rect key="frame" x="0.0" y="109" width="414" height="704"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.95178712966844248" green="1" blue="0.99339466784003094" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="cyV-tj-XfT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MCh-1z-RP3"/>
-                            <constraint firstItem="cyV-tj-XfT" firstAttribute="top" secondItem="Q0f-qI-BNl" secondAttribute="bottom" id="OMV-C4-PrG"/>
+                            <constraint firstItem="cyV-tj-XfT" firstAttribute="top" secondItem="sjC-0a-sdq" secondAttribute="bottom" constant="2" id="OMV-C4-PrG"/>
                             <constraint firstItem="J9V-ce-C7c" firstAttribute="top" secondItem="cyV-tj-XfT" secondAttribute="bottom" id="PeX-Qt-vK6"/>
                             <constraint firstItem="Q0f-qI-BNl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="13" id="RUP-zZ-FHA"/>
+                            <constraint firstItem="sjC-0a-sdq" firstAttribute="trailing" secondItem="Q0f-qI-BNl" secondAttribute="trailing" id="WkC-cJ-Ml0"/>
                             <constraint firstItem="J9V-ce-C7c" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="c6S-j5-4C9"/>
+                            <constraint firstItem="sjC-0a-sdq" firstAttribute="leading" secondItem="Q0f-qI-BNl" secondAttribute="leading" id="lrF-7x-6Ob"/>
                             <constraint firstItem="Q0f-qI-BNl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pzo-5W-p7u"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="J9V-ce-C7c" secondAttribute="bottom" id="qtD-Mt-9xX"/>
                             <constraint firstItem="Q0f-qI-BNl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uhc-pt-k1Z"/>
                             <constraint firstItem="cyV-tj-XfT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ymp-8b-iCh"/>
                             <constraint firstItem="J9V-ce-C7c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zuP-1G-A2N"/>
+                            <constraint firstItem="sjC-0a-sdq" firstAttribute="top" secondItem="Q0f-qI-BNl" secondAttribute="bottom" id="zx4-MX-2qg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="barView" destination="Q0f-qI-BNl" id="aKD-ob-Ibj"/>
                         <outlet property="numberOfTabs" destination="oNQ-SH-U0w" id="LGD-4c-kTr"/>
+                        <outlet property="progressBar" destination="sjC-0a-sdq" id="Tsa-X7-Dwx"/>
                         <outlet property="searchBarTextField" destination="Urm-hl-upM" id="qbL-7v-rgJ"/>
                         <outlet property="settingBtn" destination="7yk-oO-YR7" id="Bcd-cu-bCB"/>
                         <outlet property="webViewBrowseVC" destination="cyV-tj-XfT" id="DSg-Lx-reK"/>

@@ -14,8 +14,8 @@ class TabManager: NSObject {
     private(set) var selectedIndex : Int = -1
     
     
-    func createTab(url : NSString) {
-        let browserTab = BrowserTab(url: url)
+    func createTab(url : NSString , browseMeVCDelegate : BrowseMeViewController) {
+        let browserTab = BrowserTab(url: url, browseMeVCDelegate: browseMeVCDelegate)
         TabManager.allTabs.append(browserTab);
         selectedIndex = count-1
     }

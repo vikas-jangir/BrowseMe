@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		042D2EB3222D233500B91DF6 /* BrowserTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D2EB2222D233500B91DF6 /* BrowserTab.swift */; };
-		042D2EB4222D45C900B91DF6 /* BrowserTab+WebViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ADBDB22212BE4C0082BF02 /* BrowserTab+WebViewDelegate.swift */; };
 		042D2EBC222FD60000B91DF6 /* TabManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D2EBB222FD60000B91DF6 /* TabManager.swift */; };
 		042D2EBE2231256500B91DF6 /* TabCarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D2EBD2231256500B91DF6 /* TabCarouselViewController.swift */; };
 		042D2EC022312B1B00B91DF6 /* TabCarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D2EBF22312B1B00B91DF6 /* TabCarouselCollectionViewCell.swift */; };
+		0437226C224A02CB0067E6BF /* BrowseMeViewController+WKNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0437226B224A02CB0067E6BF /* BrowseMeViewController+WKNavigationDelegate.swift */; };
 		0438C4E8223FADE800B4FB83 /* adblock-list.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0438C4E7223FADE800B4FB83 /* adblock-list.txt */; };
 		0438C4EA223FB22500B4FB83 /* Blocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0438C4E9223FB22500B4FB83 /* Blocker.swift */; };
 		046B691F223BA3A100BAAB69 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B691E223BA3A100BAAB69 /* DataController.swift */; };
@@ -31,6 +31,7 @@
 		042D2EBB222FD60000B91DF6 /* TabManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabManager.swift; sourceTree = "<group>"; };
 		042D2EBD2231256500B91DF6 /* TabCarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCarouselViewController.swift; sourceTree = "<group>"; };
 		042D2EBF22312B1B00B91DF6 /* TabCarouselCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCarouselCollectionViewCell.swift; sourceTree = "<group>"; };
+		0437226B224A02CB0067E6BF /* BrowseMeViewController+WKNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowseMeViewController+WKNavigationDelegate.swift"; sourceTree = "<group>"; };
 		0438C4E7223FADE800B4FB83 /* adblock-list.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "adblock-list.txt"; sourceTree = "<group>"; };
 		0438C4E9223FB22500B4FB83 /* Blocker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blocker.swift; sourceTree = "<group>"; };
 		046B691E223BA3A100BAAB69 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
@@ -43,7 +44,6 @@
 		048EE33B2210457E00F8D9AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		048EE33E2210457E00F8D9AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		048EE3402210457E00F8D9AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04ADBDB22212BE4C0082BF02 /* BrowserTab+WebViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserTab+WebViewDelegate.swift"; sourceTree = "<group>"; };
 		04ADBDB42212BEA60082BF02 /* BrowseMeViewController+SearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowseMeViewController+SearchBarDelegate.swift"; sourceTree = "<group>"; };
 		04EDA86F223A771400DA3863 /* settingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,7 +63,6 @@
 			isa = PBXGroup;
 			children = (
 				042D2EB2222D233500B91DF6 /* BrowserTab.swift */,
-				04ADBDB22212BE4C0082BF02 /* BrowserTab+WebViewDelegate.swift */,
 			);
 			path = Tab;
 			sourceTree = "<group>";
@@ -75,6 +74,16 @@
 				042D2EBB222FD60000B91DF6 /* TabManager.swift */,
 			);
 			path = TabManager;
+			sourceTree = "<group>";
+		};
+		0437226D224A1DE10067E6BF /* BrowseVC */ = {
+			isa = PBXGroup;
+			children = (
+				048EE3332210457D00F8D9AE /* BrowseMeViewController.swift */,
+				04ADBDB42212BEA60082BF02 /* BrowseMeViewController+SearchBarDelegate.swift */,
+				0437226B224A02CB0067E6BF /* BrowseMeViewController+WKNavigationDelegate.swift */,
+			);
+			path = BrowseVC;
 			sourceTree = "<group>";
 		};
 		0438C4E6223FADE800B4FB83 /* AdBlocking */ = {
@@ -99,8 +108,7 @@
 		0485B36F22322D9100F50C72 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				048EE3332210457D00F8D9AE /* BrowseMeViewController.swift */,
-				04ADBDB42212BEA60082BF02 /* BrowseMeViewController+SearchBarDelegate.swift */,
+				0437226D224A1DE10067E6BF /* BrowseVC */,
 				042D2EBD2231256500B91DF6 /* TabCarouselViewController.swift */,
 				042D2EBF22312B1B00B91DF6 /* TabCarouselCollectionViewCell.swift */,
 				04EDA86F223A771400DA3863 /* settingViewController.swift */,
@@ -220,11 +228,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				042D2EB4222D45C900B91DF6 /* BrowserTab+WebViewDelegate.swift in Sources */,
 				048EE33A2210457D00F8D9AE /* BrowseMe.xcdatamodeld in Sources */,
 				04ADBDB52212BEA60082BF02 /* BrowseMeViewController+SearchBarDelegate.swift in Sources */,
 				042D2EC022312B1B00B91DF6 /* TabCarouselCollectionViewCell.swift in Sources */,
 				042D2EBC222FD60000B91DF6 /* TabManager.swift in Sources */,
+				0437226C224A02CB0067E6BF /* BrowseMeViewController+WKNavigationDelegate.swift in Sources */,
 				046B691F223BA3A100BAAB69 /* DataController.swift in Sources */,
 				048EE3342210457D00F8D9AE /* BrowseMeViewController.swift in Sources */,
 				048EE3322210457D00F8D9AE /* AppDelegate.swift in Sources */,

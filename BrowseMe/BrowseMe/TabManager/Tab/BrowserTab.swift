@@ -23,16 +23,13 @@ class BrowserTab: NSObject {
     var theBool : Bool = false
     var myTimer : Timer = Timer()
     
-    init(url : NSString) {
+    init(url : NSString , browseMeVCDelegate : BrowseMeViewController) {
         super.init()
-        createWebviewWithUrl(url: url)
+        createWebviewWithUrl(url: url , browseMeVCDelegate : browseMeVCDelegate )
     }
     
     
-    func createWebviewWithUrl(url : NSString) {
-        
-        
-        
+    func createWebviewWithUrl(url : NSString , browseMeVCDelegate : BrowseMeViewController) {
         
         progressBar.progressViewStyle = UIProgressView.Style.bar
         
@@ -43,7 +40,7 @@ class BrowserTab: NSObject {
         webConfiguration.allowsPictureInPictureMediaPlayback = true
         
         bTabWebView = WKWebView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), configuration: webConfiguration)
-        bTabWebView.navigationDelegate = self
+        bTabWebView.navigationDelegate = browseMeVCDelegate as WKNavigationDelegate
         
         bTabWebView.allowsBackForwardNavigationGestures = true
 
@@ -86,5 +83,5 @@ class BrowserTab: NSObject {
             }
         }
     }
-    
+
 }
