@@ -107,13 +107,11 @@ extension BrowseMeViewController : UITextFieldDelegate {
     func expendSearchBar() {
         widthOfSearchBar = searchBarTextField.frame.size.width
         numberOfTabs.isHidden = true
-        settingBtn.isHidden = true
         searchBarAnimation(width: self.barView.frame.size.width-15)
     }
     
     func collapseSearchBar() {
         numberOfTabs.isHidden = false
-        settingBtn.isHidden = false
         searchBarAnimation(width: widthOfSearchBar)
     }
     

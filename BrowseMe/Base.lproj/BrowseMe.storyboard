@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="48"/>
                                 <subviews>
                                     <textField clipsSubviews="YES" clearsContextBeforeDrawing="NO" alpha="0.75" contentMode="scaleToFill" semanticContentAttribute="spatial" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="  Search or type web address" textAlignment="justified" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Urm-hl-upM">
-                                        <rect key="frame" x="8" y="4" width="314" height="40"/>
+                                        <rect key="frame" x="8" y="8" width="348" height="36"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -32,7 +32,7 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oNQ-SH-U0w">
-                                        <rect key="frame" x="331" y="10" width="28" height="28"/>
+                                        <rect key="frame" x="371" y="10" width="28" height="28"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="oNQ-SH-U0w" secondAttribute="height" multiplier="5:5" id="9kT-mc-dKC"/>
@@ -41,31 +41,17 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yk-oO-YR7">
-                                        <rect key="frame" x="374" y="8" width="32" height="32"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="7yk-oO-YR7" secondAttribute="height" multiplier="1:1" id="UNX-9u-XIc"/>
-                                        </constraints>
-                                        <state key="normal" title="s" image="setting"/>
-                                        <connections>
-                                            <action selector="settingButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Dk-kc-Hd6"/>
-                                            <segue destination="TbM-Ug-na3" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="QiX-nq-teS"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Urm-hl-upM" firstAttribute="leading" secondItem="Q0f-qI-BNl" secondAttribute="leading" constant="8" id="8Wa-yl-9mc"/>
-                                    <constraint firstAttribute="trailing" secondItem="7yk-oO-YR7" secondAttribute="trailing" constant="8" id="CCP-JZ-dLn"/>
+                                    <constraint firstAttribute="trailing" secondItem="oNQ-SH-U0w" secondAttribute="trailing" constant="15" id="CK7-UQ-5Pp"/>
                                     <constraint firstAttribute="bottom" secondItem="oNQ-SH-U0w" secondAttribute="bottom" constant="10" id="CTt-tT-K1Q"/>
                                     <constraint firstItem="oNQ-SH-U0w" firstAttribute="top" secondItem="Q0f-qI-BNl" secondAttribute="top" constant="10" id="Jf0-Nx-JXl"/>
-                                    <constraint firstItem="7yk-oO-YR7" firstAttribute="top" secondItem="Q0f-qI-BNl" secondAttribute="top" constant="8" id="X0p-Lw-7Xr"/>
-                                    <constraint firstItem="oNQ-SH-U0w" firstAttribute="leading" secondItem="Urm-hl-upM" secondAttribute="trailing" constant="9" id="YbY-m0-K40"/>
+                                    <constraint firstItem="oNQ-SH-U0w" firstAttribute="leading" secondItem="Urm-hl-upM" secondAttribute="trailing" constant="15" id="UUi-bu-K9Z"/>
                                     <constraint firstAttribute="height" constant="48" id="cxC-Fy-A9f"/>
                                     <constraint firstAttribute="bottom" secondItem="Urm-hl-upM" secondAttribute="bottom" constant="4" id="fOL-P1-s3Z"/>
-                                    <constraint firstItem="7yk-oO-YR7" firstAttribute="leading" secondItem="oNQ-SH-U0w" secondAttribute="trailing" constant="15" id="jIX-sy-Nwu"/>
-                                    <constraint firstAttribute="bottom" secondItem="7yk-oO-YR7" secondAttribute="bottom" constant="8" id="joj-1q-1yU"/>
-                                    <constraint firstItem="Urm-hl-upM" firstAttribute="top" secondItem="Q0f-qI-BNl" secondAttribute="top" constant="4" id="oKW-Km-a9t"/>
+                                    <constraint firstItem="Urm-hl-upM" firstAttribute="top" secondItem="Q0f-qI-BNl" secondAttribute="top" constant="8" id="oKW-Km-a9t"/>
                                 </constraints>
                             </view>
                             <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sjC-0a-sdq">
@@ -115,6 +101,12 @@
                                             <action selector="newTab:" destination="BYZ-38-t0r" id="sEy-c2-TFF"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="DwC-eY-yFI"/>
+                                    <barButtonItem title="setting" image="setting1" id="gU9-AS-UWW">
+                                        <connections>
+                                            <segue destination="TbM-Ug-na3" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="chS-bM-vYG"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                                 <color key="tintColor" red="1" green="0.40643951839999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
@@ -142,7 +134,6 @@
                         <outlet property="numberOfTabs" destination="oNQ-SH-U0w" id="LGD-4c-kTr"/>
                         <outlet property="progressBar" destination="sjC-0a-sdq" id="Tsa-X7-Dwx"/>
                         <outlet property="searchBarTextField" destination="Urm-hl-upM" id="qbL-7v-rgJ"/>
-                        <outlet property="settingBtn" destination="7yk-oO-YR7" id="Bcd-cu-bCB"/>
                         <outlet property="toolBarView" destination="GgH-R0-cbL" id="zq6-vg-2u4"/>
                         <outlet property="webViewBrowseVC" destination="cyV-tj-XfT" id="DSg-Lx-reK"/>
                     </connections>
@@ -309,6 +300,6 @@
         <image name="close" width="128" height="128"/>
         <image name="closeBtn" width="128" height="128"/>
         <image name="home2" width="24" height="24"/>
-        <image name="setting" width="128" height="128"/>
+        <image name="setting1" width="24" height="24"/>
     </resources>
 </document>

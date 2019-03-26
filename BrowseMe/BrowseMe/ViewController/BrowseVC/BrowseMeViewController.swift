@@ -13,12 +13,10 @@ class BrowseMeViewController: UIViewController , TabCarouselVCDelegate {
     
     @IBOutlet weak var toolBarView: UIToolbar!
     
-    
     @IBOutlet weak var searchBarTextField: UITextField!
     @IBOutlet weak var numberOfTabs: UILabel!
     @IBOutlet weak var barView: UIView!
     @IBOutlet weak var webViewBrowseVC: UIView!
-    @IBOutlet weak var settingBtn: UIButton!
     
     var tabManger = TabManager()
     var widthOfSearchBar : CGFloat = 0.0
@@ -110,7 +108,6 @@ class BrowseMeViewController: UIViewController , TabCarouselVCDelegate {
     func updateNumberOfTabsLabel() {
         numberOfTabs.text = String(TabManager.allTabs.count)
     }
-    
 }
 
 //@objc
