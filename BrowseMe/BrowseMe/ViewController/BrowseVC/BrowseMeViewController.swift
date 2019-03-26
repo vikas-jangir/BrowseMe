@@ -20,16 +20,20 @@ class BrowseMeViewController: UIViewController , TabCarouselVCDelegate {
     
     var tabManger = TabManager()
     var widthOfSearchBar : CGFloat = 0.0
+    var homePageDataArray = [Dictionary<String, String>]()
+    
     
     
     @IBOutlet weak var progressBar: UIProgressView!
     var isprogressBarActive : Bool = false
     var progressBarTimer : Timer = Timer()
     
+    @IBOutlet weak var homePageCollectionView: UICollectionView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        homePageDataArray = getHomePagePlistData() as! [Dictionary<String, String>] 
         setUpVC()
       //  TabCoreDataModel.saveBrowseTabToCoreModel()
         // Do any additional setup after loading the view, typically from a nib.
@@ -103,10 +107,37 @@ class BrowseMeViewController: UIViewController , TabCarouselVCDelegate {
     // MARK:- SetUpVC
     func setUpVC() {
         searchBarUI()
+        homePageCollectionView.dataSource = self as UICollectionViewDataSource
+        homePageCollectionView.delegate = self
     }
     
     func updateNumberOfTabsLabel() {
         numberOfTabs.text = String(TabManager.allTabs.count)
+    }
+    
+    
+    
+    
+    
+    
+    
+    //// CollectionView
+    func getHomePagePlistData() -> NSArray
+    {
+        var array = NSArray()
+        
+        let path = Bundle.main.path(forResource: "HomePageData", ofType: "plist")
+        if let validPath = path
+        {
+            let arr = NSArray(contentsOfFile: validPath)
+            
+            if let validArr = arr
+            {
+                array = validArr
+            }
+        }
+        
+        return array
     }
 }
 

@@ -12,6 +12,9 @@
 		042D2EBE2231256500B91DF6 /* TabCarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D2EBD2231256500B91DF6 /* TabCarouselViewController.swift */; };
 		042D2EC022312B1B00B91DF6 /* TabCarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D2EBF22312B1B00B91DF6 /* TabCarouselCollectionViewCell.swift */; };
 		0437226C224A02CB0067E6BF /* BrowseMeViewController+WKNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0437226B224A02CB0067E6BF /* BrowseMeViewController+WKNavigationDelegate.swift */; };
+		0437226F224AA2E70067E6BF /* HomePageData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0437226E224AA2E70067E6BF /* HomePageData.plist */; };
+		04372271224AA8530067E6BF /* BrowseMeViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04372270224AA8530067E6BF /* BrowseMeViewController+CollectionView.swift */; };
+		04372273224AA9CE0067E6BF /* HomePageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04372272224AA9CE0067E6BF /* HomePageCollectionViewCell.swift */; };
 		0438C4E8223FADE800B4FB83 /* adblock-list.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0438C4E7223FADE800B4FB83 /* adblock-list.txt */; };
 		0438C4EA223FB22500B4FB83 /* Blocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0438C4E9223FB22500B4FB83 /* Blocker.swift */; };
 		046B691F223BA3A100BAAB69 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B691E223BA3A100BAAB69 /* DataController.swift */; };
@@ -32,6 +35,9 @@
 		042D2EBD2231256500B91DF6 /* TabCarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCarouselViewController.swift; sourceTree = "<group>"; };
 		042D2EBF22312B1B00B91DF6 /* TabCarouselCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCarouselCollectionViewCell.swift; sourceTree = "<group>"; };
 		0437226B224A02CB0067E6BF /* BrowseMeViewController+WKNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowseMeViewController+WKNavigationDelegate.swift"; sourceTree = "<group>"; };
+		0437226E224AA2E70067E6BF /* HomePageData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = HomePageData.plist; path = ViewController/HomePageCollectionView/HomePageData.plist; sourceTree = "<group>"; };
+		04372270224AA8530067E6BF /* BrowseMeViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowseMeViewController+CollectionView.swift"; sourceTree = "<group>"; };
+		04372272224AA9CE0067E6BF /* HomePageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageCollectionViewCell.swift; sourceTree = "<group>"; };
 		0438C4E7223FADE800B4FB83 /* adblock-list.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "adblock-list.txt"; sourceTree = "<group>"; };
 		0438C4E9223FB22500B4FB83 /* Blocker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blocker.swift; sourceTree = "<group>"; };
 		046B691E223BA3A100BAAB69 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
@@ -82,6 +88,8 @@
 				048EE3332210457D00F8D9AE /* BrowseMeViewController.swift */,
 				04ADBDB42212BEA60082BF02 /* BrowseMeViewController+SearchBarDelegate.swift */,
 				0437226B224A02CB0067E6BF /* BrowseMeViewController+WKNavigationDelegate.swift */,
+				04372270224AA8530067E6BF /* BrowseMeViewController+CollectionView.swift */,
+				04372272224AA9CE0067E6BF /* HomePageCollectionViewCell.swift */,
 			);
 			path = BrowseVC;
 			sourceTree = "<group>";
@@ -148,6 +156,7 @@
 		04ADBDB12212BD250082BF02 /* BrowseMe */ = {
 			isa = PBXGroup;
 			children = (
+				0437226E224AA2E70067E6BF /* HomePageData.plist */,
 				0438C4E6223FADE800B4FB83 /* AdBlocking */,
 				046B691D223BA0AB00BAAB69 /* Data */,
 				0485B36F22322D9100F50C72 /* ViewController */,
@@ -214,6 +223,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0437226F224AA2E70067E6BF /* HomePageData.plist in Resources */,
 				048EE33F2210457E00F8D9AE /* LaunchScreen.storyboard in Resources */,
 				048EE33C2210457E00F8D9AE /* Assets.xcassets in Resources */,
 				048EE3372210457D00F8D9AE /* BrowseMe.storyboard in Resources */,
@@ -229,7 +239,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				048EE33A2210457D00F8D9AE /* BrowseMe.xcdatamodeld in Sources */,
+				04372271224AA8530067E6BF /* BrowseMeViewController+CollectionView.swift in Sources */,
 				04ADBDB52212BEA60082BF02 /* BrowseMeViewController+SearchBarDelegate.swift in Sources */,
+				04372273224AA9CE0067E6BF /* HomePageCollectionViewCell.swift in Sources */,
 				042D2EC022312B1B00B91DF6 /* TabCarouselCollectionViewCell.swift in Sources */,
 				042D2EBC222FD60000B91DF6 /* TabManager.swift in Sources */,
 				0437226C224A02CB0067E6BF /* BrowseMeViewController+WKNavigationDelegate.swift in Sources */,
