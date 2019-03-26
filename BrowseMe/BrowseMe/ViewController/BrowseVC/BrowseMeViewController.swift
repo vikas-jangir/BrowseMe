@@ -11,6 +11,7 @@ import WebKit
 
 class BrowseMeViewController: UIViewController , TabCarouselVCDelegate {
     
+    @IBOutlet weak var toolBarView: UIToolbar!
     
     
     @IBOutlet weak var searchBarTextField: UITextField!

@@ -19,6 +19,7 @@ extension BrowseMeViewController : WKNavigationDelegate {
     }
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
          stopProgressBar()
+        tabManger.selectedTab?.takeSnapShot()
         print("vikas jangir")
     }
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
