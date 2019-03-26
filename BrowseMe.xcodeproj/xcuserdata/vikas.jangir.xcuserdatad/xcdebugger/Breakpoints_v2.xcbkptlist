@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BrowseMe/BrowseMe/ViewController/BrowseVC/BrowseMeViewController+WKNavigationDelegate.swift"
-            timestampString = "575300981.394439"
+            timestampString = "575302140.73382"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "43"
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BrowseMe/BrowseMe/ViewController/BrowseVC/BrowseMeViewController.swift"
-            timestampString = "575300981.3945071"
+            timestampString = "575302140.733925"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
