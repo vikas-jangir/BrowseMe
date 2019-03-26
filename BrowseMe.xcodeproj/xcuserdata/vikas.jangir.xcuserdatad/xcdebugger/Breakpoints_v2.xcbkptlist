@@ -9,45 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BrowseMe/BrowseMe/TabManager/Tab/BrowserTab+WebViewDelegate.swift"
-            timestampString = "574331503.585122"
+            filePath = "BrowseMe/BrowseMe/AdBlocking/ParsingBlockList.swift"
+            timestampString = "575273559.397554"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "startProgressBar()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BrowseMe/BrowseMe/TabManager/Tab/BrowserTab+WebViewDelegate.swift"
-            timestampString = "574331503.585408"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "timerCallback()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BrowseMe/BrowseMe/Data/TabCoreDataModel.swift"
-            timestampString = "574593970.091525"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "saveBrowseTabToCoreModel()"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "shouldBlock(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
